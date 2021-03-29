@@ -1,0 +1,65 @@
+---
+title: "Climate Perceptions in Toronto"
+author: "Lorena Almaraz De La Garza"
+date: "2021 04 19"
+output:
+  bookdown::pdf_document2: default
+subtitle: "with data from Open Data Toronto"
+toc: FALSE
+thanks: 'Code and data are available in this GitHub repository: [lalmaraz/toronto_climate_perceptions] (https://github.com/lalmaraz/toronto_climate_perceptions).'
+bibliography: references.bib
+abstract: X
+---
+
+# Introduction
+
+```{r libs, include = FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+# Load libraries
+library(bookdown)
+library(ggmap)
+library(gt)
+library(here)
+library(httr)
+library(janitor)
+library(kableExtra)
+library(knitr)
+library(opendatatoronto)
+library(readxl)
+packageVersion("readxl")
+library(rio)
+library(tidyverse)
+
+# Find and get data
+
+questions <- search_packages("climate") %>% 
+  list_package_resources() %>% 
+  filter(grepl("Readme Data Field Names", name)) %>% 
+  get_resource()
+
+raw_data <- search_packages("climate") %>% 
+  list_package_resources() %>% 
+  filter(grepl("City of Toronto Climate Perceptions SPSS v1", name)) %>% 
+  get_resource()
+
+# Save data
+write_csv(raw_data,"inputs/data/raw_data.csv")
+
+# Read in data
+all_data <- read_csv("inputs/data/raw_data.csv")
+```
+
+# Data
+
+# Discussion 
+
+## Limitations
+
+## Next Steps 
+
+
+\newpage
+# Appendix 1 {#appendix1}
+```
+
+\newpage
+# References
