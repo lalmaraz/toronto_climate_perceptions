@@ -1,5 +1,5 @@
 ---
-title: "Climate Perceptions in Toronto"
+title: "Climate Perceptions in Toronto: [The effect of age on self-reported level of concern]"
 author: "Lorena Almaraz De La Garza"
 date: "April 19th, 2021"
 keywords: "X, Y, Z"
@@ -9,8 +9,9 @@ subtitle: "with data from Open Data Toronto"
 toc: FALSE
 thanks: 'Code and data are available in this GitHub repository: [lalmaraz/toronto_climate_perceptions](https://github.com/lalmaraz/toronto_climate_perceptions).'
 bibliography: references.bib
-abstract: "The abstract text occupies this beautiful space right here. \\par
- \\textbf{Keywords:} search, stackoverflow, find, workaround" 
+abstract: "This report presents a secondary analysis on the City of Toronto's publicly-accessible data on residents' perceptions about climate change. The results indicate there is a [negative/positive] association between respondents' age and self-reported level of concern of climate change, and a [negative/positive] association between respondents' gender and self-reported level of concern of climate change. The analysis consists of logistic regression conducted with the statistical programming language R. Effectively addressing the ongoing threat of climate change demands collaboration and data-informed decision-making. [The results] contribute to our understanding of the issue at a local level, enabling effective action.
+ \\par
+ \\textbf{Keywords:} climate change, climate perceptions, climate concerns, climate action, age and climate, youth and climate, toronto residents, open data toronto" 
  
 ---
 
@@ -31,19 +32,68 @@ library(tidyverse)
 ```
 
 # Introduction
-[@R]
+
+Although scientific research on the impacts of climate change has been conducted for decades, the last few years have seen a surge of public participation and activism. In particular, youth climate leaders, with unwavering motivation and forthright campaigns, have guided and inspired thousands around the world [@unicef]. In their demands they often ask that adults enact intergenerational equity - the principle that states that every generation, present and future, "holds the Earth in common" [@oxford] - and wake up from their profit-driven ignorance and comfort [@villasenor]. But how does age really affect self-reported concern of climate change? To answer this question, the following pages present a secondary analysis on survey data collected by Environics, commissioned by the City of Toronto, on residents' perceptions on climate change. Using the statistical programming language R, this study performs logistic regression to determine whether a correlation exists between two key variables: age and self-reported level of concern about climate change. Informed by the youth climate movement, the hypothesis is that younger generations are more inclined to self-describe as concerned about climate change. 
+
+Drawing upon the activism that advocates for an intersectional approach to climate action, a similar regression analysis is also performed on the gender variable. Intersectionality, as defined by Kimberle Crenshaw and described by Nina Lykke, is the idea that discrimination and systemic inequalities overlap – or intersect – across factors like gender, race, and class, and do not exist in isolation [@lykke]. Intersectional environmentalism, therefore, promotes climate action that recognizes the ways in which climate change disproportionately affects the already disadvantaged [@madson]. In this case, the hypothesis is that participants that identified as female will have a greater likelihood of reporting a greater level of concern of climate change.
+
+The results provide valuable insight. [Results will be here.] As argued by Jackson and De Coninck, effective climate action, particularly in adaptation and resilience, depends on active participation at a local level [@jackson]. With this in mind, this paper advocates for the use of open data practices by local governments, including municipalities, to promote data-informed decision-making. For civic engagement and grassroots organizing, access to reliable data is vital. It allows organizers to direct outreach efforts and to allocate precious resources efficiently. Due to the scale and complexity of the challenges posed by climate change, ensuring the public has access to quality data can prove immensely beneficial. As beautifully illustrated by Kieran Healy, the crowdsourced data and data analyses that continue to uncover the effects of COVID-19 demonstrate the power of collaboration and open data in addressing challenges of unforeseen scales [@healy]. Similarly, climate change - and effective climate action - have a lot to gain from public ingenuity fueled by open data.
+
+The paper is organized as follows. The Data section presents an overview of the original dataset and the variables relevant to this study. It also provides critical commentary on the limitations of the original survey design. Finally, it compares the surveyed sample to the provincial and national population. The Methodology section discusses the strengths and weaknesses of the implemented model, as well as of the models that were considered as alternatives. It includes details on how the data were re-coded to suit the model and how non-response is addressed. The Results section explains the baseline category in the model and the coefficients from each analysis. Finally, the Discussion section is comprised of four subsections: Findings, Ethics & Implications, Limitations, and Future Work, situating the study within a broader context.
 
 # Data
+- R [@R] & packages
+- Origin: Environics commissioned by the City of Toronto
+- Sample:
+- Variables: level of concern [yes/no], level of information [yes/no], age [four groups from report], neighbourhood [wards], gender [m/f], dwellings, own/rent, income level, education level
+- Survey limitations/biases: non-response bias (unit/item)
+- Is data missing in patterns?
+- Respondents' demographics compared to broader (provincial/national) population
+- Nice graphs and tables that show the data as I found it
+
 
 ## Methodology
+- Logistic regression to show correlation
+- This is a good choice because [strengths] 
+- Clear equation
+- Applied to these data specifically, explain notation
+- The things this *does not* tell us [weaknesses]
+- Even accounting for these ^, this is a reasonable approach because [reasons/alternative models' limitations]
+- How non-response is dealt with here
+- X variables re-coded into binaries
+
+
 ## Results
+- Presented with nothing but the best, A Nice Table
+- Baseline category [refactor if needed]
+- Coefficients [exponentiated]
+- Age will be in groups (so +1 age means +1 age GROUP)
+- For same conditions [education/income/dwellings/etc], change of 1 in a variable[age/gender] is X% more/less likely to self-report more/less concern? More/less informed?
+- What else was in the data [refer to findings from EDA script]? Patterns/trends? Any unasked but answered questions?
 
 # Discussion
 
 ## Findings
-## Implications
+- [Finding 1]
+- [Finding 2]
+- [Finding 3]
+
+## Ethics & Implications
+- Ethics
+- What exactly did the city do with these data?
+[Women4Climate programme, Wild About Bees, Neighbourhood Climate Action Champions... within TransformTO/Live Green Toronto/Env Grants & Incentives]
+- Open data & civic organizing (1240W10P1)
+- Value of local data-informed action for climate change [may or may not self-promote here, prob won't. but maybe?]
+
 ## Limitations
-## Future Work 
+- Observational data & general limitations of any model, THERE IS NO TRUTH!
+- Speaking on causality [and why I can't/won't]
+- Several things potentially at play here not studied or even acknowledged: research on political affiliation and climate perception, etc
+- Berkson's when looking just at Toronto?
+- Quick look at the city's report (how do they draw conclusions from such a limited dataset?)
+
+## Future Work
+- MRP for Ontario-wide perceptions?
 
 ```{r echo=FALSE, message=FALSE, warning=TRUE}
 
