@@ -1,3 +1,11 @@
+#### Preamble ####
+# Purpose: Exploratory data analysis for Climate Perceptions project
+# Author: Lorena Almaraz De La Garza
+# Date: April 2021
+# Contact: l.almaraz@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - install packages if needed
 
 library(opendatatoronto)
 library(RCurl)
@@ -44,6 +52,17 @@ climate_perceptions <-
 climate_perceptions_clean <- climate_perceptions %>%
   filter(gender != "Prefer not to say", concern_local != "Donâ€™t know", concern_global != "Donâ€™t know", education != "Prefer not to answer", income != "Prefer not to answer")
 
+# Curious about those invalid responses, actually 
+climate_perceptions_dirty <- climate_perceptions %>%
+mutate(invalid = case_when(
+  gender == "Prefer not to say" ~ TRUE,
+  concern_local == "Donâ€™t know" ~ TRUE,
+  concern_global == "Donâ€™t know"~ TRUE,
+  education == "Prefer not to answer" ~ TRUE,
+  income == "Prefer not to answer"~ TRUE
+)) %>% 
+  na.omit()
+
 # Create binary options for concern_local, concern_global, and information
 concerned_local <- c("Extremely concerned", "Very concerned")
 not_concerned_local <- c("Not very concerned", "Not at all concerned")
@@ -83,6 +102,14 @@ climate_perceptions_clean <-
     age >= 65 ~ 3
   ))
 
+# Determine Boomer status
+climate_perceptions_clean <- 
+  climate_perceptions_clean %>%
+  mutate(boomer_status = case_when(
+    age <= 54 ~ FALSE,
+    age >= 55 ~ TRUE
+  ))
+
 # Convert income and education to numeric variables
 climate_perceptions_clean <- 
   climate_perceptions_clean %>%
@@ -106,6 +133,9 @@ climate_perceptions_clean <-
     income == "More than $150,000" ~ 5,
   ))
 
+# Save
+write_csv(climate_perceptions_clean, "outputs/data/climate_data_clean.csv")
+
 # Model time!
 # Univar & multivar models: local concern
 u_concern_local_glm <- glm(concerned_local_binary ~ age_group, data = climate_perceptions_clean, family = "binomial")
@@ -127,3 +157,16 @@ summary(u_informed_glm)
 
 m_informed_glm <- glm(informed_binary ~ age_group + gender + education_group + income_group, data = climate_perceptions_clean, family = "binomial")
 summary(m_informed_glm)
+
+# Boomer Special Edition models:
+# Local concern
+boomer_concern_local_glm <- glm(concerned_local_binary ~ boomer_status + gender + education_group + income_group, data = climate_perceptions_clean, family = "binomial")
+summary(boomer_concern_local_glm)
+
+# Global concern
+boomer_concern_global_glm <- glm(concerned_global_binary ~ boomer_status + gender + education_group + income_group, data = climate_perceptions_clean, family = "binomial")
+summary(boomer_concern_global_glm)
+
+# Informed
+boomer_informed_glm <- glm(informed_binary ~ boomer_status + gender + education_group + income_group, data = climate_perceptions_clean, family = "binomial")
+summary(boomer_informed_glm)
