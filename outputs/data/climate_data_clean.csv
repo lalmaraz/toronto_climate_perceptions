@@ -1,327 +1,326 @@
-postal_code,ward_name,gender,age,concern_local,concern_global,information,education,income,concerned_local_binary,concerned_global_binary,informed_binary,age_group,boomer_status,education_group,income_group
-M1R,Scarborough Centre,Man,33,Not very concerned,Very concerned,Not very informed,Some university,"Under $40,000",FALSE,TRUE,FALSE,0,FALSE,3,0
-M8X,Etobicoke-Lakeshore,Man,70,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,TRUE,4,4
-M3h,York Centre,Man,59,Extremely concerned,Very concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,5,5
-M5V,Spadina-Fort York,Woman,31,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,FALSE,0,FALSE,5,4
-m1w,Scarborough-Agincourt,Man,60,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,4,5
-M9w,Etobicoke North,Man,68,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,2,1
-M5c,Toronto Centre,Woman,34,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,FALSE,5,5
-m1w,Scarborough-Agincourt,Woman,46,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-M9R,Etobicoke North,Man,76,Extremely concerned,Very concerned,Not very informed,High school or less,"$100,001 to $150,000",TRUE,TRUE,FALSE,3,TRUE,0,4
-M9w,Etobicoke North,Woman,41,Extremely concerned,Extremely concerned,Very informed,"Some community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,1,2
-M5N,Eglinton-Lawrence,Woman,70,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,TRUE,5,2
-m6m,York South-Weston,Woman,69,Very concerned,Very concerned,Very informed,High school or less,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,0,1
-M4L,Beaches-East York,Man,32,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,FALSE,5,5
-m9w,Etobicoke North,Woman,27,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,0,FALSE,2,3
-m6j,Davenport,Woman,28,Not very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,TRUE,TRUE,0,FALSE,5,5
-m2j,Don Valley North,Woman,49,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,4,3
-M1V,Scarborough-Agincourt,Man,43,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-m6j,Spadina-Fort York,Woman,36,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-m9c,Etobicoke-Lakeshore,Man,34,Extremely concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-M5e,Spadina-Fort York,Woman,55,Very concerned,Very concerned,Extremely informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,TRUE,4,3
-M6A,Eglinton-Lawrence,Man,26,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,5,1
-m1w,Scarborough-Agincourt,Man,30,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-m1s,Scarborough North,Man,30,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,3,2
-m3c,Don Valley East,Man,44,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,1,FALSE,4,0
-M4S,Toronto-St. Paul's,Man,32,Extremely concerned,Very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,5,2
-M4S,Toronto-St. Paul's,Man,29,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,5,2
-M6S,Parkdale-High Park,Woman,75,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,3,TRUE,5,0
-m4p,Toronto-St. Paul's,Woman,23,Not very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",FALSE,TRUE,TRUE,0,FALSE,5,0
-M4X,Toronto Centre,Man,30,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,4,3
-m4s,Toronto-St. Paul's,Man,35,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-M6E,Davenport,Man,41,Very concerned,Very concerned,Extremely informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,4,3
-M6J,Spadina-Fort York,Woman,51,Not very concerned,Not very concerned,Not very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",FALSE,FALSE,FALSE,2,FALSE,2,4
-m4n,Don Valley West,Man,53,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,2,FALSE,4,5
-M4X,#NULL!,Man,76,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,TRUE,5,4
-M4J,Toronto-Danforth,Man,58,Not very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,TRUE,TRUE,2,TRUE,2,1
-M6A,#NULL!,Woman,67,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,3,TRUE,4,0
-m3a,Don Valley East,Man,31,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,0,FALSE,4,3
-m4v,Toronto-St. Paul's,Woman,24,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,0,FALSE,4,2
-M5P,#NULL!,Man,30,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,0,FALSE,4,5
-m1k,Scarborough Centre,Man,31,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-m4l,Beaches-East York,Woman,30,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,4,2
-M5a,Toronto Centre,Man,31,Very concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-M8Y,Etobicoke-Lakeshore,Woman,30,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,4,3
-m6n,York South-Weston,Woman,35,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-m2n,Willowdale,Woman,32,Extremely concerned,Extremely concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,0,FALSE,5,3
-M5V,Spadina-Fort York,Man,34,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,4,3
-M4G,#NULL!,Man,29,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,5,4
-M6J,Davenport,Man,27,Not very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,0,FALSE,4,5
-M5j,Spadina-Fort York,Woman,24,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,4,1
-M2n,Willowdale,Man,20,Very concerned,Very concerned,Very informed,Some university,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,3,0
-M1X,Scarborough-Rouge Park,Woman,24,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,5,3
-m4y,Toronto Centre,Man,24,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,TRUE,0,FALSE,4,2
-m1s,Scarborough North,Man,22,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,4,3
-m2n,Willowdale,Man,26,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,4,0
-M6k,Spadina-Fort York,Woman,33,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,FALSE,5,5
-M9N,#NULL!,Man,24,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,4,0
-m1r,Scarborough Centre,Man,25,Not very concerned,Not very concerned,Extremely informed,Some university,"More than $150,000",FALSE,FALSE,TRUE,0,FALSE,3,5
-m6h,Davenport,Man,33,Very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,5,0
-M5S,Toronto Centre,Man,32,Very concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,FALSE,FALSE,0,FALSE,4,4
-M5A,Toronto Centre,Woman,31,Not very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,TRUE,FALSE,0,FALSE,2,1
-M2k,Don Valley North,Woman,35,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-M5R,University-Rosedale,Man,32,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-M9v,Etobicoke North,Woman,24,Extremely concerned,Extremely concerned,Extremely informed,"Completed community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,2,4
-M1W,Scarborough-Agincourt,Man,33,Not very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,0,FALSE,4,5
-M1N,#NULL!,Man,33,Extremely concerned,Extremely concerned,Very informed,Some university,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,3,4
-M1b,Scarborough North,Woman,29,Extremely concerned,Extremely concerned,Not very informed,Some university,"$100,001 to $150,000",TRUE,TRUE,FALSE,0,FALSE,3,4
-m9b,Etobicoke Centre,Man,54,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,FALSE,5,4
-M6S,Parkdale-High Park,Woman,25,Not very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$60,001 to $80,000",FALSE,TRUE,TRUE,0,FALSE,5,2
-M6M,York South-Weston,Woman,33,Not very concerned,Not very concerned,Not very informed,High school or less,"Under $40,000",FALSE,FALSE,FALSE,0,FALSE,0,0
-M1P,Scarborough Centre,Woman,27,Very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,5,0
-M1E,Scarborough-Rouge Park,Man,18,Not very concerned,Very concerned,Extremely informed,High school or less,"$60,001 to $80,000",FALSE,TRUE,TRUE,0,FALSE,0,2
-M3H,York Centre,Man,29,Extremely concerned,Very concerned,Extremely informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,0,FALSE,2,0
-M2r,York Centre,Man,34,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,5,4
-m6e,Eglinton-Lawrence,Woman,35,Extremely concerned,Not very concerned,Extremely informed,"Some community college, vocational, trade school","$80,001 to $100,000",TRUE,FALSE,TRUE,1,FALSE,1,3
-M1T,Scarborough-Agincourt,Man,32,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,5,4
-m4g,Don Valley West,Woman,25,Very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,FALSE,5,5
-M2N,Willowdale,Woman,55,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,5,5
-M6E,#NULL!,Man,29,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,5,2
-M9C,Etobicoke-Lakeshore,Man,28,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,FALSE,TRUE,0,FALSE,4,4
-M8v,Etobicoke-Lakeshore,Man,30,Very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,5,0
-m2m,Willowdale,Man,107,Very concerned,Very concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,TRUE,3,3
-m9m,Humber River-Black Creek,Woman,30,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,5,3
-m5t,Spadina-Fort York,Man,29,Not very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","$60,001 to $80,000",FALSE,TRUE,FALSE,0,FALSE,1,2
-m1j,Scarborough-Guildwood,Man,41,Extremely concerned,Very concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,4,1
-m6l,York South-Weston,Woman,19,Extremely concerned,Extremely concerned,Not very informed,"Some community college, vocational, trade school","Under $40,000",TRUE,TRUE,FALSE,0,FALSE,1,0
-M1S,#NULL!,Man,21,Very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","Under $40,000",TRUE,TRUE,FALSE,0,FALSE,1,0
-M9B,#NULL!,Man,55,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,2,TRUE,4,5
-m6s,Parkdale-High Park,Woman,32,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,FALSE,0,FALSE,5,4
-M6p,Parkdale-High Park,Woman,57,Extremely concerned,Extremely concerned,Not very informed,"Some community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,2,TRUE,1,3
-M4J,#NULL!,Woman,30,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,5,3
-M2K,Don Valley North,Woman,32,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,4,1
-M2M,Don Valley North,Woman,30,Very concerned,Very concerned,Not very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,FALSE,0,FALSE,3,3
-M4K,Toronto-Danforth,Man,38,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,4,4
-m3h,York Centre,Woman,40,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,3,1
-M6S,Parkdale-High Park,Woman,56,Extremely concerned,Extremely concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,TRUE,3,3
-M5h,Spadina-Fort York,Woman,36,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,1,FALSE,4,3
-M1l,Scarborough Southwest,Man,33,Not at all concerned,Not at all concerned,Very informed,Some university,"More than $150,000",FALSE,FALSE,TRUE,0,FALSE,3,5
-M2R,York Centre,Man,31,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-M1B,Scarborough-Rouge Park,Man,24,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,4,2
-M1L,#NULL!,Man,59,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,TRUE,4,2
-M1K,#NULL!,Man,27,Very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,0,FALSE,1,1
-m3a,Don Valley East,Man,56,Not very concerned,Not very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",FALSE,FALSE,TRUE,2,TRUE,5,2
-M1l,Scarborough Southwest,Woman,34,Not very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",FALSE,TRUE,TRUE,0,FALSE,2,4
-M8x,Etobicoke-Lakeshore,Woman,30,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,0,FALSE,4,5
-M9A,Etobicoke-Lakeshore,Woman,34,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,5,3
-M1W,Scarborough-Agincourt,Woman,55,Not at all concerned,Not at all concerned,Not very informed,High school or less,"Under $40,000",FALSE,FALSE,FALSE,2,TRUE,0,0
-M3a,Don Valley East,Woman,44,Not very concerned,Not very concerned,Not very informed,Post graduate/professional school,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,FALSE,5,2
-M1N,Scarborough Southwest,Man,19,Very concerned,Extremely concerned,Very informed,Some university,"More than $150,000",TRUE,TRUE,TRUE,0,FALSE,3,5
-M6n,York South-Weston,Woman,31,Not at all concerned,Not at all concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",FALSE,FALSE,TRUE,0,FALSE,4,3
-M4W,University-Rosedale,Woman,75,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,TRUE,5,3
-M6c,Toronto-St. Paul's,Man,65,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,TRUE,3,TRUE,2,4
-M5t,Spadina-Fort York,Woman,35,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,5,3
-m1w,Scarborough-Agincourt,Woman,61,Very concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,2,TRUE,4,0
-M5M,Eglinton-Lawrence,Man,25,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,4,3
-m4e,Beaches-East York,Woman,57,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,FALSE,2,TRUE,5,1
-M3A,Don Valley East,Man,27,Not very concerned,Not very concerned,Not very informed,Post graduate/professional school,"More than $150,000",FALSE,FALSE,FALSE,0,FALSE,5,5
-M1W,#NULL!,Woman,70,Very concerned,Very concerned,Not very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,FALSE,3,TRUE,3,1
-M1N,Scarborough Southwest,Woman,53,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,2,FALSE,2,3
-M3A,Don Valley East,Woman,70,Extremely concerned,Extremely concerned,Very informed,"Some community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,1,1
-M3A,Don Valley East,Woman,69,Extremely concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,TRUE,5,4
-M3a,Don Valley East,Man,48,Extremely concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,1,FALSE,1,2
-M2n,Willowdale,Man,44,Not very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,TRUE,TRUE,1,FALSE,5,5
-m2j,Don Valley North,Man,58,Not very concerned,Not very concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,FALSE,FALSE,2,TRUE,2,1
-M4b,Beaches-East York,Woman,33,Very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,5,0
-M3A,Don Valley East,Woman,54,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,FALSE,5,4
-M3m,York Centre,Man,47,Not at all concerned,Not very concerned,Not very informed,Some university,"$100,001 to $150,000",FALSE,FALSE,FALSE,1,FALSE,3,4
-M1S,Scarborough-Agincourt,Woman,69,Extremely concerned,Very concerned,Extremely informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,3,TRUE,0,0
-M4E,#NULL!,Woman,70,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,TRUE,5,2
-M5S,#NULL!,Man,49,Not very concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,FALSE,4,2
-M5C,#NULL!,Man,57,Not very concerned,Not very concerned,Very informed,"Some community college, vocational, trade school","$80,001 to $100,000",FALSE,FALSE,TRUE,2,TRUE,1,3
-M4p,Don Valley West,Woman,44,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,3,1
-M9V,Etobicoke North,Woman,21,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,3,2
-M3M,York Centre,Man,74,Very concerned,Very concerned,Very informed,High school or less,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,0,1
-M5V,Spadina-Fort York,Man,35,Extremely concerned,Extremely concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,1,FALSE,0,0
-M1N,#NULL!,Woman,34,Extremely concerned,Extremely concerned,Very informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,0,0
-M6M,York South-Weston,Man,46,Extremely concerned,Extremely concerned,Not very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,FALSE,3,2
-M1L,#NULL!,Woman,61,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,2,TRUE,2,1
-M1T,Scarborough-Agincourt,Woman,57,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,2,TRUE,0,0
-M1t,Scarborough-Agincourt,Woman,57,Very concerned,Very concerned,Very informed,"Some community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,2,TRUE,1,0
-m9c,Etobicoke Centre,Woman,60,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,TRUE,4,3
-M5R,University-Rosedale,Woman,44,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,5,3
-M3M,York Centre,Woman,43,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,4,4
-M1E,#NULL!,Woman,19,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,0,FALSE,0,0
-M1E,Scarborough-Guildwood,Woman,50,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,2,FALSE,2,2
-M1W,Scarborough-Agincourt,Woman,65,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,TRUE,4,4
-M3N,Humber River-Black Creek,Man,26,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",FALSE,FALSE,TRUE,0,FALSE,4,1
-m2n,#NULL!,Woman,63,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,2,TRUE,2,0
-M1E,Scarborough-Guildwood,Woman,58,Extremely concerned,Extremely concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,2,TRUE,0,0
-M6N,York South-Weston,Man,38,Very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,1,FALSE,2,1
-M6l,York South-Weston,Woman,55,Very concerned,Very concerned,Not very informed,Some university,"More than $150,000",TRUE,TRUE,FALSE,2,TRUE,3,5
-M6N,York South-Weston,Man,51,Not very concerned,Not very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,FALSE,TRUE,2,FALSE,2,1
-M9W,#NULL!,Woman,18,Very concerned,Extremely concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,FALSE,3,3
-M6M,York South-Weston,Man,70,Extremely concerned,Extremely concerned,Extremely informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,3,1
-M4x,Toronto Centre,Man,47,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-M8x,#NULL!,Woman,61,Extremely concerned,Extremely concerned,Not very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,TRUE,3,3
-M4K,Toronto-Danforth,Man,48,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-M1K,Scarborough Southwest,Man,38,Extremely concerned,Extremely concerned,Very informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,1,FALSE,0,0
-m4c,Beaches-East York,Man,62,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,TRUE,4,4
-M1h,Scarborough-Guildwood,Woman,50,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,2,FALSE,2,2
-M9L,Humber River-Black Creek,Woman,32,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,0,FALSE,4,0
-M2M,#NULL!,Man,46,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,TRUE,TRUE,1,FALSE,4,4
-m1e,Scarborough-Guildwood,Man,73,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",FALSE,TRUE,TRUE,3,TRUE,4,3
-M1K,Scarborough Southwest,Man,54,Very concerned,Very concerned,Extremely informed,"Some community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,TRUE,2,FALSE,1,4
-m5b,Toronto Centre,Woman,44,Very concerned,Extremely concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,FALSE,1,FALSE,5,4
-M4k,Toronto-Danforth,Woman,22,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,5,2
-M1T,Scarborough-Agincourt,Man,60,Not very concerned,Not very concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,FALSE,TRUE,2,TRUE,5,5
-M3H,York Centre,Woman,47,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,1,FALSE,4,5
-M1l,#NULL!,Woman,49,Extremely concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,FALSE,4,2
-M1E,Scarborough-Guildwood,Woman,39,Very concerned,Very concerned,Very informed,"Some community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,1,3
-M4E,Scarborough Southwest,Woman,40,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,5,2
-M1T,Scarborough-Agincourt,Man,76,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,3,TRUE,5,3
-M1p,#NULL!,Woman,62,Very concerned,Very concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,TRUE,3,2
-m1c,Scarborough-Rouge Park,Woman,32,Extremely concerned,Extremely concerned,Extremely informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,2,1
-M1S,Scarborough-Agincourt,Man,69,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,TRUE,4,3
-M6N,Davenport,Man,49,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,4,5
-M2H,Don Valley North,Man,31,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,2,1
-M5s,Toronto Centre,Man,42,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M9V,Etobicoke North,Man,40,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,5,3
-m9v,Etobicoke North,Man,52,Extremely concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,2,FALSE,4,2
-M4B,#NULL!,Woman,73,Very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,3,TRUE,2,1
-M4l,Beaches-East York,Man,57,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,5,5
-m4j,Toronto-Danforth,Man,34,Extremely concerned,Extremely concerned,Extremely informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,0,FALSE,2,0
-m5v,Spadina-Fort York,Man,38,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,5,1
-M5B,Toronto Centre,Man,44,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,5,3
-M1T,Scarborough-Agincourt,Man,35,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M6G,University-Rosedale,Man,58,Very concerned,Very concerned,Very informed,Some university,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,3,5
-M5s,#NULL!,Man,52,Not very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",FALSE,TRUE,FALSE,2,FALSE,4,3
-M4S,Toronto-St. Paul's,Woman,73,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,FALSE,3,TRUE,4,5
-M4N,Don Valley West,Woman,75,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,3,TRUE,5,5
-M1V,Scarborough North,Man,54,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,2,FALSE,4,0
-m5v,Spadina-Fort York,Woman,44,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-m1b,Scarborough-Rouge Park,Man,55,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,2,TRUE,5,1
-m3m,York Centre,Man,61,Not very concerned,Not very concerned,Very informed,High school or less,"$60,001 to $80,000",FALSE,FALSE,TRUE,2,TRUE,0,2
-M9R,#NULL!,Woman,22,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,FALSE,4,4
-M9C,Etobicoke Centre,Woman,76,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,4,1
-M4H,Don Valley West,Woman,70,Very concerned,Extremely concerned,Very informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,3,TRUE,0,0
-M6H,Davenport,Man,28,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,4,1
-M1J,#NULL!,Woman,58,Extremely concerned,Extremely concerned,Not very informed,High school or less,"$100,001 to $150,000",TRUE,TRUE,FALSE,2,TRUE,0,4
-m4t,University-Rosedale,Man,83,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,TRUE,5,2
-M9c,Etobicoke Centre,Woman,25,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,0,FALSE,4,2
-M4M,#NULL!,Man,55,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,TRUE,5,4
-m2j,Don Valley North,Woman,33,Very concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,2,2
-M3H,#NULL!,Woman,67,Very concerned,Not very concerned,Not very informed,Some university,"$60,001 to $80,000",TRUE,FALSE,FALSE,3,TRUE,3,2
-M3J,#NULL!,Man,40,Not very concerned,Not very concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",FALSE,FALSE,FALSE,1,FALSE,2,2
-m3j,Humber River-Black Creek,Woman,35,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,FALSE,1,FALSE,5,1
-M1H,Scarborough-Guildwood,Man,72,Extremely concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,3,TRUE,2,3
-M6B,Eglinton-Lawrence,Man,24,Not very concerned,Very concerned,Very informed,High school or less,"$100,001 to $150,000",FALSE,TRUE,TRUE,0,FALSE,0,4
-M4H,Don Valley West,Woman,27,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,FALSE,4,1
-M5V,#NULL!,Man,48,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-M8V,Etobicoke-Lakeshore,Woman,65,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,3,TRUE,5,5
-M2J,Don Valley North,Transgender,38,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M4T,#NULL!,Woman,40,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,4,3
-m9w,Etobicoke North,Man,48,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,2,1
-M8Y,Etobicoke-Lakeshore,Man,42,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,FALSE,1,FALSE,4,5
-m5h,Spadina-Fort York,Man,43,Not very concerned,Not very concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,FALSE,TRUE,1,FALSE,5,5
-m1e,Scarborough-Guildwood,Man,32,Extremely concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,FALSE,0,FALSE,2,4
-M9W,Etobicoke North,Man,64,Very concerned,Not very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,FALSE,TRUE,2,TRUE,5,2
-m9b,Etobicoke Centre,Man,40,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,4,5
-M9R,Etobicoke Centre,Woman,58,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,TRUE,4,3
-M8z,Etobicoke-Lakeshore,Man,36,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,FALSE,4,2
-M4L,Toronto-Danforth,Woman,47,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,4,4
-M9W,#NULL!,Man,53,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,FALSE,5,3
-M9C,Etobicoke Centre,Woman,38,Not very concerned,Very concerned,Very informed,Some university,"$80,001 to $100,000",FALSE,TRUE,TRUE,1,FALSE,3,3
-M9A,Etobicoke Centre,Woman,53,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,FALSE,5,5
-M8V,Etobicoke-Lakeshore,Woman,64,Extremely concerned,Extremely concerned,Extremely informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,2,TRUE,0,0
-M9L,#NULL!,Woman,52,Very concerned,Not very concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,FALSE,TRUE,2,FALSE,4,4
-M6b,Eglinton-Lawrence,Man,58,Not very concerned,Not very concerned,Extremely informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,2,TRUE,4,5
-M6K,Parkdale-High Park,Man,47,Very concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,1,FALSE,2,0
-M6s,Parkdale-High Park,Man,39,Very concerned,Very concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,4,4
-M6R,Parkdale-High Park,Man,58,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,TRUE,4,3
-M6H,Davenport,Woman,37,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,4,1
-M6H,Davenport,Woman,38,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-M9C,Etobicoke Centre,Woman,65,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,3,TRUE,4,0
-m6h,Davenport,Man,41,Not very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,TRUE,TRUE,1,FALSE,4,4
-m6p,Davenport,Man,36,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M5M,Eglinton-Lawrence,Woman,62,Not very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",FALSE,TRUE,TRUE,2,TRUE,5,4
-m5m,Eglinton-Lawrence,Woman,48,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-M6J,#NULL!,Woman,71,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,5,1
-M9V,Etobicoke North,Woman,36,Very concerned,Very concerned,Very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,0,2
-M4G,#NULL!,Man,63,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,TRUE,5,2
-M6M,#NULL!,Man,55,Extremely concerned,Extremely concerned,Very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,TRUE,0,2
-M4K,Toronto-Danforth,Man,65,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,TRUE,5,3
-M6h,Davenport,Woman,51,Extremely concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,FALSE,4,2
-M6J,Davenport,Man,64,Very concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,TRUE,4,4
-M9A,Etobicoke Centre,Woman,51,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,FALSE,5,5
-M6B,#NULL!,Man,40,Not very concerned,Not very concerned,Not very informed,High school or less,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,FALSE,0,2
-M1E,#NULL!,Woman,77,Extremely concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,3,TRUE,2,2
-M9l,#NULL!,Man,56,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,4,5
-M1p,#NULL!,Man,47,Not very concerned,Not very concerned,Not very informed,High school or less,"$100,001 to $150,000",FALSE,FALSE,FALSE,1,FALSE,0,4
-m1m,Scarborough Southwest,Man,42,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,3,1
-m4j,Toronto-Danforth,Woman,40,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-M3J,Humber River-Black Creek,Woman,57,Very concerned,Very concerned,Not very informed,High school or less,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,TRUE,0,3
-M4n,Don Valley West,Man,63,Not at all concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,FALSE,2,TRUE,4,2
-M6H,Davenport,Woman,57,Extremely concerned,Extremely concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,2,TRUE,3,1
-m8v,#NULL!,Man,50,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,FALSE,5,3
-m1m,Scarborough Southwest,Man,51,Not very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",FALSE,TRUE,TRUE,2,FALSE,2,2
-M8V,Etobicoke-Lakeshore,Woman,46,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M5V,Spadina-Fort York,Woman,53,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,FALSE,5,5
-M6l,York South-Weston,Man,43,Very concerned,Very concerned,Not very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,FALSE,0,2
-M8Y,Etobicoke-Lakeshore,Woman,42,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,5,2
-M4M,Toronto-Danforth,Man,56,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,5,5
-m4p,Toronto-St. Paul's,Man,35,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,4,1
-m4m,Toronto-Danforth,Man,56,Very concerned,Not very concerned,Not very informed,Post graduate/professional school,"More than $150,000",TRUE,FALSE,FALSE,2,TRUE,5,5
-M1B,#NULL!,Woman,70,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,3,TRUE,0,0
-m2h,Don Valley North,Man,66,Extremely concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,TRUE,3,TRUE,2,2
-m6p,Davenport,Man,53,Not very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",FALSE,TRUE,FALSE,2,FALSE,4,0
-M8X,Etobicoke-Lakeshore,Man,46,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,3,1
-M9V,Etobicoke North,Man,63,Very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,2,TRUE,2,3
-m6e,Davenport,Woman,41,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,4,5
-M1H,Scarborough-Guildwood,Woman,47,Very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","More than $150,000",TRUE,TRUE,FALSE,1,FALSE,1,5
-M6H,#NULL!,Woman,38,Extremely concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,1,FALSE,2,1
-M1K,Scarborough Centre,Man,38,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,3,1
-M4X,Toronto Centre,Man,58,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,TRUE,5,4
-M1E,Scarborough-Guildwood,Man,81,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,TRUE,3,2
-M3h,York Centre,Woman,43,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-m5a,Toronto Centre,Woman,45,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,2,1
-m1c,Scarborough-Rouge Park,Man,62,Not very concerned,Extremely concerned,Very informed,Some university,"$80,001 to $100,000",FALSE,TRUE,TRUE,2,TRUE,3,3
-M6s,#NULL!,Man,42,Very concerned,Very concerned,Very informed,High school or less,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,FALSE,0,1
-M5M,Eglinton-Lawrence,Man,20,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,FALSE,3,2
-M6P,Davenport,Woman,38,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M2R,#NULL!,Woman,64,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,TRUE,5,3
-m2n,#NULL!,Man,35,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,1,FALSE,4,5
-m4m,Toronto-Danforth,Man,36,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-m4c,Beaches-East York,Man,37,Not very concerned,Not very concerned,Not very informed,Some university,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,FALSE,3,2
-m2j,Don Valley North,Man,49,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-m4e,Beaches-East York,Woman,36,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M5V,Spadina-Fort York,Man,75,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,FALSE,3,TRUE,5,5
-M8X,#NULL!,Man,77,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,3,TRUE,4,3
-m6h,Davenport,Woman,41,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,1,FALSE,4,0
-M6J,Spadina-Fort York,Man,41,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,FALSE,1,FALSE,4,5
-M5a,Toronto Centre,Man,36,Extremely concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","More than $150,000",TRUE,TRUE,TRUE,1,FALSE,2,5
-M1C,Scarborough-Rouge Park,Man,64,Very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,2,TRUE,5,0
-m6h,#NULL!,Woman,66,Very concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,3,TRUE,2,3
-M1p,Scarborough Centre,Man,45,Not at all concerned,Not at all concerned,Very informed,Completed undergraduate degree,"Under $40,000",FALSE,FALSE,TRUE,1,FALSE,4,0
-m2n,Willowdale,Woman,36,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,FALSE,1,FALSE,5,1
-M1B,Scarborough-Rouge Park,Woman,60,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,4,5
-M1C,Scarborough-Rouge Park,Man,47,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,2,3
-M2M,Willowdale,Man,43,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,5,3
-M1V,Scarborough North,Woman,73,Not very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,TRUE,FALSE,3,TRUE,2,1
-M3L,Humber River-Black Creek,Man,114,Very concerned,Very concerned,Extremely informed,"Some community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,3,TRUE,1,1
-m1b,Scarborough-Rouge Park,Woman,63,Very concerned,Very concerned,Not at all informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,2,TRUE,4,0
-M4x,Toronto Centre,Woman,64,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,TRUE,5,2
-M2N,#NULL!,Woman,41,Very concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,FALSE,1,FALSE,4,4
-m3l,Humber River-Black Creek,Man,37,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,4,4
-m4c,Beaches-East York,Man,45,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,FALSE,5,5
-M1K,Scarborough Centre,Man,65,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,3,TRUE,5,3
-M4C,Beaches-East York,Man,39,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,FALSE,5,4
-M9V,Etobicoke North,Woman,26,Very concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,0,FALSE,4,2
-M9P,Etobicoke Centre,Woman,36,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,FALSE,1,FALSE,4,1
-M6L,York South-Weston,Man,58,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,5,5
-M9L,Humber River-Black Creek,Woman,18,Extremely concerned,Extremely concerned,Very informed,Some university,"Under $40,000",TRUE,TRUE,TRUE,0,FALSE,3,0
-m6s,Parkdale-High Park,Woman,67,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,3,TRUE,5,5
-M2J,Don Valley North,Man,42,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,1,FALSE,5,0
-M2N,#NULL!,Man,75,Not very concerned,Not very concerned,Not very informed,High school or less,"$60,001 to $80,000",FALSE,FALSE,FALSE,3,TRUE,0,2
-m6k,Spadina-Fort York,Man,41,Very concerned,Very concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,FALSE,3,3
-M4Y,Toronto Centre,Man,45,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,FALSE,4,2
-m4s,Toronto-St. Paul's,Man,48,Not at all concerned,Not at all concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",FALSE,FALSE,TRUE,1,FALSE,5,1
-M2H,Don Valley North,Man,72,Not very concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,FALSE,3,TRUE,4,2
-M4Y,Toronto Centre,Man,53,Not very concerned,Not at all concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,FALSE,TRUE,2,FALSE,4,4
-M6M,York South-Weston,Woman,60,Extremely concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,FALSE,2,TRUE,2,0
-M6G,Toronto-St. Paul's,Man,54,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,FALSE,4,4
-m2k,Don Valley North,Man,40,Very concerned,Very concerned,Not at all informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,FALSE,1,FALSE,5,5
-m5n,Eglinton-Lawrence,Man,65,Not very concerned,Not very concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",FALSE,FALSE,FALSE,3,TRUE,5,4
-M6A,Eglinton-Lawrence,Woman,31,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,0,FALSE,0,0
-M2H,Don Valley North,Man,59,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,TRUE,4,5
-M4L,#NULL!,Woman,79,Very concerned,Very concerned,Not very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,FALSE,3,TRUE,0,2
+postal_code,gender,age,concern_local,concern_global,information,education,income,concerned_local_binary,concerned_global_binary,informed_binary,age_group,region,education_group,income_group,region_group
+M1B,Woman,29,Extremely concerned,Extremely concerned,Not very informed,Some university,"$100,001 to $150,000",TRUE,TRUE,FALSE,0,Scarborough,3,4,3
+M1B,Man,24,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Scarborough,4,2,3
+M1B,Man,55,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,2,Scarborough,5,1,3
+M1B,Woman,70,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,3,Scarborough,0,0,3
+M1B,Woman,60,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,Scarborough,4,5,3
+M1B,Woman,63,Very concerned,Very concerned,Not at all informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,2,Scarborough,4,0,3
+M1C,Woman,32,Extremely concerned,Extremely concerned,Extremely informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,0,Scarborough,2,1,3
+M1C,Man,62,Not very concerned,Extremely concerned,Very informed,Some university,"$80,001 to $100,000",FALSE,TRUE,TRUE,2,Scarborough,3,3,3
+M1C,Man,64,Very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,2,Scarborough,5,0,3
+M1C,Man,47,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,1,Scarborough,2,3,3
+M1E,Man,18,Not very concerned,Very concerned,Extremely informed,High school or less,"$60,001 to $80,000",FALSE,TRUE,TRUE,0,Scarborough,0,2,3
+M1E,Woman,19,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,0,Scarborough,0,0,3
+M1E,Woman,50,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,2,Scarborough,2,2,3
+M1E,Woman,58,Extremely concerned,Extremely concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,2,Scarborough,0,0,3
+M1E,Man,73,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",FALSE,TRUE,TRUE,3,Scarborough,4,3,3
+M1E,Woman,39,Very concerned,Very concerned,Very informed,"Some community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,1,Scarborough,1,3,3
+M1E,Man,32,Extremely concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,FALSE,0,Scarborough,2,4,3
+M1E,Woman,77,Extremely concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,3,Scarborough,2,2,3
+M1E,Man,81,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,Scarborough,3,2,3
+M1H,Woman,50,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,2,Scarborough,2,2,3
+M1H,Man,72,Extremely concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,3,Scarborough,2,3,3
+M1H,Woman,47,Very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","More than $150,000",TRUE,TRUE,FALSE,1,Scarborough,1,5,3
+M1J,Man,41,Extremely concerned,Very concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Scarborough,4,1,3
+M1J,Woman,58,Extremely concerned,Extremely concerned,Not very informed,High school or less,"$100,001 to $150,000",TRUE,TRUE,FALSE,2,Scarborough,0,4,3
+M1K,Man,31,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Scarborough,4,4,3
+M1K,Man,27,Very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,0,Scarborough,1,1,3
+M1K,Man,38,Extremely concerned,Extremely concerned,Very informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,1,Scarborough,0,0,3
+M1K,Man,54,Very concerned,Very concerned,Extremely informed,"Some community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,TRUE,2,Scarborough,1,4,3
+M1K,Man,38,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Scarborough,3,1,3
+M1K,Man,65,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,3,Scarborough,5,3,3
+M1L,Man,33,Not at all concerned,Not at all concerned,Very informed,Some university,"More than $150,000",FALSE,FALSE,TRUE,0,Scarborough,3,5,3
+M1L,Man,59,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,Scarborough,4,2,3
+M1L,Woman,34,Not very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",FALSE,TRUE,TRUE,0,Scarborough,2,4,3
+M1L,Woman,61,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,2,Scarborough,2,1,3
+M1L,Woman,49,Extremely concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,Scarborough,4,2,3
+M1M,Man,42,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Scarborough,3,1,3
+M1M,Man,51,Not very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",FALSE,TRUE,TRUE,2,Scarborough,2,2,3
+M1N,Man,33,Extremely concerned,Extremely concerned,Very informed,Some university,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Scarborough,3,4,3
+M1N,Man,19,Very concerned,Extremely concerned,Very informed,Some university,"More than $150,000",TRUE,TRUE,TRUE,0,Scarborough,3,5,3
+M1N,Woman,53,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,2,Scarborough,2,3,3
+M1N,Woman,34,Extremely concerned,Extremely concerned,Very informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,0,Scarborough,0,0,3
+M1P,Woman,27,Very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,Scarborough,5,0,3
+M1P,Woman,62,Very concerned,Very concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,Scarborough,3,2,3
+M1P,Man,47,Not very concerned,Not very concerned,Not very informed,High school or less,"$100,001 to $150,000",FALSE,FALSE,FALSE,1,Scarborough,0,4,3
+M1P,Man,45,Not at all concerned,Not at all concerned,Very informed,Completed undergraduate degree,"Under $40,000",FALSE,FALSE,TRUE,1,Scarborough,4,0,3
+M1R,Man,33,Not very concerned,Very concerned,Not very informed,Some university,"Under $40,000",FALSE,TRUE,FALSE,0,Scarborough,3,0,3
+M1R,Man,25,Not very concerned,Not very concerned,Extremely informed,Some university,"More than $150,000",FALSE,FALSE,TRUE,0,Scarborough,3,5,3
+M1S,Man,30,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Scarborough,3,2,3
+M1S,Man,22,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Scarborough,4,3,3
+M1S,Man,21,Very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","Under $40,000",TRUE,TRUE,FALSE,0,Scarborough,1,0,3
+M1S,Woman,69,Extremely concerned,Very concerned,Extremely informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,3,Scarborough,0,0,3
+M1S,Man,69,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,Scarborough,4,3,3
+M1T,Man,32,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Scarborough,5,4,3
+M1T,Woman,57,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,2,Scarborough,0,0,3
+M1T,Woman,57,Very concerned,Very concerned,Very informed,"Some community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,2,Scarborough,1,0,3
+M1T,Man,60,Not very concerned,Not very concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,FALSE,TRUE,2,Scarborough,5,5,3
+M1T,Man,76,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,3,Scarborough,5,3,3
+M1T,Man,35,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Scarborough,5,4,3
+M1V,Man,43,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Scarborough,5,4,3
+M1V,Man,54,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,2,Scarborough,4,0,3
+M1V,Woman,73,Not very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,TRUE,FALSE,3,Scarborough,2,1,3
+M1W,Man,60,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,Scarborough,4,5,3
+M1W,Woman,46,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,Scarborough,5,5,3
+M1W,Man,30,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Scarborough,4,4,3
+M1W,Man,33,Not very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,0,Scarborough,4,5,3
+M1W,Woman,55,Not at all concerned,Not at all concerned,Not very informed,High school or less,"Under $40,000",FALSE,FALSE,FALSE,2,Scarborough,0,0,3
+M1W,Woman,61,Very concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,2,Scarborough,4,0,3
+M1W,Woman,70,Very concerned,Very concerned,Not very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,FALSE,3,Scarborough,3,1,3
+M1W,Woman,65,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,Scarborough,4,4,3
+M1X,Woman,24,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Scarborough,5,3,3
+M2H,Man,31,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,0,North York,2,1,2
+M2H,Man,66,Extremely concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,TRUE,3,North York,2,2,2
+M2H,Man,72,Not very concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,FALSE,3,North York,4,2,2
+M2H,Man,59,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,North York,4,5,2
+M2J,Woman,49,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,North York,4,3,2
+M2J,Man,58,Not very concerned,Not very concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,FALSE,FALSE,2,North York,2,1,2
+M2J,Woman,33,Very concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,TRUE,0,North York,2,2,2
+M2J,Man,49,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,North York,4,2,2
+M2J,Man,42,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,1,North York,5,0,2
+M2K,Woman,35,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,North York,4,2,2
+M2K,Woman,32,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,North York,4,1,2
+M2K,Man,40,Very concerned,Very concerned,Not at all informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,FALSE,1,North York,5,5,2
+M2M,Man,107,Very concerned,Very concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,North York,3,3,2
+M2M,Woman,30,Very concerned,Very concerned,Not very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,FALSE,0,North York,3,3,2
+M2M,Man,46,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,TRUE,TRUE,1,North York,4,4,2
+M2M,Man,43,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,North York,5,3,2
+M2N,Woman,32,Extremely concerned,Extremely concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,0,North York,5,3,2
+M2N,Man,20,Very concerned,Very concerned,Very informed,Some university,"Under $40,000",TRUE,TRUE,TRUE,0,North York,3,0,2
+M2N,Man,26,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,0,North York,4,0,2
+M2N,Woman,55,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,North York,5,5,2
+M2N,Man,44,Not very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,TRUE,TRUE,1,North York,5,5,2
+M2N,Woman,63,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,2,North York,2,0,2
+M2N,Man,35,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,1,North York,4,5,2
+M2N,Woman,36,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,FALSE,1,North York,5,1,2
+M2N,Woman,41,Very concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,FALSE,1,North York,4,4,2
+M2N,Man,75,Not very concerned,Not very concerned,Not very informed,High school or less,"$60,001 to $80,000",FALSE,FALSE,FALSE,3,North York,0,2,2
+M2R,Man,34,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,North York,5,4,2
+M2R,Man,31,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,North York,4,4,2
+M2R,Woman,64,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,North York,5,3,2
+M3A,Man,31,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,0,North York,4,3,2
+M3A,Man,56,Not very concerned,Not very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",FALSE,FALSE,TRUE,2,North York,5,2,2
+M3A,Woman,44,Not very concerned,Not very concerned,Not very informed,Post graduate/professional school,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,North York,5,2,2
+M3A,Man,27,Not very concerned,Not very concerned,Not very informed,Post graduate/professional school,"More than $150,000",FALSE,FALSE,FALSE,0,North York,5,5,2
+M3A,Woman,70,Extremely concerned,Extremely concerned,Very informed,"Some community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,3,North York,1,1,2
+M3A,Woman,69,Extremely concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,North York,5,4,2
+M3A,Man,48,Extremely concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,FALSE,1,North York,1,2,2
+M3A,Woman,54,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,North York,5,4,2
+M3C,Man,44,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,1,North York,4,0,2
+M3H,Man,59,Extremely concerned,Very concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,North York,5,5,2
+M3H,Man,29,Extremely concerned,Very concerned,Extremely informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,0,North York,2,0,2
+M3H,Woman,40,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,North York,3,1,2
+M3H,Woman,47,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,1,North York,4,5,2
+M3H,Woman,67,Very concerned,Not very concerned,Not very informed,Some university,"$60,001 to $80,000",TRUE,FALSE,FALSE,3,North York,3,2,2
+M3H,Woman,43,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,North York,5,4,2
+M3J,Man,40,Not very concerned,Not very concerned,Not very informed,"Completed community college, vocational, trade school","$60,001 to $80,000",FALSE,FALSE,FALSE,1,North York,2,2,2
+M3J,Woman,35,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,FALSE,1,North York,5,1,2
+M3J,Woman,57,Very concerned,Very concerned,Not very informed,High school or less,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,North York,0,3,2
+M3L,Man,114,Very concerned,Very concerned,Extremely informed,"Some community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,3,North York,1,1,2
+M3L,Man,37,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,North York,4,4,2
+M3M,Man,47,Not at all concerned,Not very concerned,Not very informed,Some university,"$100,001 to $150,000",FALSE,FALSE,FALSE,1,North York,3,4,2
+M3M,Man,74,Very concerned,Very concerned,Very informed,High school or less,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,North York,0,1,2
+M3M,Woman,43,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,North York,4,4,2
+M3M,Man,61,Not very concerned,Not very concerned,Very informed,High school or less,"$60,001 to $80,000",FALSE,FALSE,TRUE,2,North York,0,2,2
+M3N,Man,26,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",FALSE,FALSE,TRUE,0,North York,4,1,2
+M4B,Woman,33,Very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,0,0
+M4B,Woman,73,Very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,3,Toronto/East York,2,1,0
+M4C,Man,62,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,4,4,0
+M4C,Man,37,Not very concerned,Not very concerned,Not very informed,Some university,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,Toronto/East York,3,2,0
+M4C,Man,45,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,5,0
+M4C,Man,39,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,4,0
+M4E,Woman,57,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,FALSE,2,Toronto/East York,5,1,0
+M4E,Woman,70,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,2,0
+M4E,Woman,40,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,2,0
+M4E,Woman,36,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,4,0
+M4G,Man,29,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,4,0
+M4G,Woman,25,Very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,5,0
+M4G,Man,63,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,2,0
+M4H,Woman,70,Very concerned,Extremely concerned,Very informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,3,Toronto/East York,0,0,0
+M4H,Woman,27,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,1,0
+M4J,Man,58,Not very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,TRUE,TRUE,2,Toronto/East York,2,1,0
+M4J,Woman,30,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,3,0
+M4J,Man,34,Extremely concerned,Extremely concerned,Extremely informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,0,Toronto/East York,2,0,0
+M4J,Woman,40,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,5,0
+M4K,Man,38,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,4,0
+M4K,Man,48,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,5,0
+M4K,Woman,22,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,2,0
+M4K,Man,65,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,3,0
+M4L,Man,32,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,5,0
+M4L,Woman,30,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,2,0
+M4L,Man,57,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,5,0
+M4L,Woman,47,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,4,0
+M4L,Woman,79,Very concerned,Very concerned,Not very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,FALSE,3,Toronto/East York,0,2,0
+M4M,Man,55,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,4,0
+M4M,Man,56,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,5,0
+M4M,Man,56,Very concerned,Not very concerned,Not very informed,Post graduate/professional school,"More than $150,000",TRUE,FALSE,FALSE,2,Toronto/East York,5,5,0
+M4M,Man,36,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,2,0
+M4N,Man,53,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,2,Toronto/East York,4,5,0
+M4N,Woman,75,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,5,0
+M4N,Man,63,Not at all concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,FALSE,2,Toronto/East York,4,2,0
+M4P,Woman,23,Not very concerned,Very concerned,Very informed,Post graduate/professional school,"Under $40,000",FALSE,TRUE,TRUE,0,Toronto/East York,5,0,0
+M4P,Woman,44,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Toronto/East York,3,1,0
+M4P,Man,35,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,1,0
+M4S,Man,32,Extremely concerned,Very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,2,0
+M4S,Man,29,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,2,0
+M4S,Man,35,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,2,0
+M4S,Woman,73,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,FALSE,3,Toronto/East York,4,5,0
+M4S,Man,48,Not at all concerned,Not at all concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",FALSE,FALSE,TRUE,1,Toronto/East York,5,1,0
+M4T,Man,83,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,2,0
+M4T,Woman,40,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,3,0
+M4V,Woman,24,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,0,Toronto/East York,4,2,0
+M4W,Woman,75,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,3,0
+M4X,Man,30,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,3,0
+M4X,Man,76,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,4,0
+M4X,Man,47,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,2,0
+M4X,Man,58,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,4,0
+M4X,Woman,64,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,2,0
+M4Y,Man,24,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,TRUE,0,Toronto/East York,4,2,0
+M4Y,Man,45,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,2,0
+M4Y,Man,53,Not very concerned,Not at all concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,FALSE,TRUE,2,Toronto/East York,4,4,0
+M5A,Man,31,Very concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,4,0
+M5A,Woman,31,Not very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,TRUE,FALSE,0,Toronto/East York,2,1,0
+M5A,Woman,45,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,1,Toronto/East York,2,1,0
+M5A,Man,36,Extremely concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","More than $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,2,5,0
+M5B,Woman,44,Very concerned,Extremely concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,FALSE,1,Toronto/East York,5,4,0
+M5B,Man,44,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,3,0
+M5C,Woman,34,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,5,0
+M5C,Man,57,Not very concerned,Not very concerned,Very informed,"Some community college, vocational, trade school","$80,001 to $100,000",FALSE,FALSE,TRUE,2,Toronto/East York,1,3,0
+M5E,Woman,55,Very concerned,Very concerned,Extremely informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,Toronto/East York,4,3,0
+M5H,Woman,36,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,1,Toronto/East York,4,3,0
+M5H,Man,43,Not very concerned,Not very concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,FALSE,TRUE,1,Toronto/East York,5,5,0
+M5J,Woman,24,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,1,0
+M5M,Man,25,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,North York,4,3,2
+M5M,Woman,62,Not very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",FALSE,TRUE,TRUE,2,North York,5,4,2
+M5M,Woman,48,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,North York,5,5,2
+M5M,Man,20,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,North York,3,2,2
+M5N,Woman,70,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,2,0
+M5N,Man,65,Not very concerned,Not very concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",FALSE,FALSE,FALSE,3,Toronto/East York,5,4,0
+M5P,Man,30,Not very concerned,Very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,0,Toronto/East York,4,5,0
+M5R,Man,32,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,4,0
+M5R,Woman,44,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,3,0
+M5S,Man,32,Very concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,FALSE,FALSE,0,Toronto/East York,4,4,0
+M5S,Man,49,Not very concerned,Not very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,Toronto/East York,4,2,0
+M5S,Man,42,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,4,0
+M5S,Man,52,Not very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",FALSE,TRUE,FALSE,2,Toronto/East York,4,3,0
+M5T,Man,29,Not very concerned,Very concerned,Not very informed,"Some community college, vocational, trade school","$60,001 to $80,000",FALSE,TRUE,FALSE,0,Toronto/East York,1,2,0
+M5T,Woman,35,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,3,0
+M5V,Woman,31,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,FALSE,0,Toronto/East York,5,4,0
+M5V,Man,34,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,3,0
+M5V,Man,35,Extremely concerned,Extremely concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,1,Toronto/East York,0,0,0
+M5V,Man,38,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,1,0
+M5V,Woman,44,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,4,0
+M5V,Man,48,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,5,0
+M5V,Woman,53,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,5,5,0
+M5V,Man,75,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,FALSE,3,Toronto/East York,5,5,0
+M6A,Man,26,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,North York,5,1,2
+M6A,Woman,67,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,3,North York,4,0,2
+M6A,Woman,31,Very concerned,Very concerned,Not very informed,High school or less,"Under $40,000",TRUE,TRUE,FALSE,0,North York,0,0,2
+M6B,Man,24,Not very concerned,Very concerned,Very informed,High school or less,"$100,001 to $150,000",FALSE,TRUE,TRUE,0,North York,0,4,2
+M6B,Man,58,Not very concerned,Not very concerned,Extremely informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,2,North York,4,5,2
+M6B,Man,40,Not very concerned,Not very concerned,Not very informed,High school or less,"$60,001 to $80,000",FALSE,FALSE,FALSE,1,North York,0,2,2
+M6C,Man,65,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,TRUE,3,Etobicoke-York,2,4,1
+M6E,Man,41,Very concerned,Very concerned,Extremely informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Etobicoke-York,4,3,1
+M6E,Woman,35,Extremely concerned,Not very concerned,Extremely informed,"Some community college, vocational, trade school","$80,001 to $100,000",TRUE,FALSE,TRUE,1,Etobicoke-York,1,3,1
+M6E,Man,29,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Etobicoke-York,5,2,1
+M6E,Woman,41,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,1,Etobicoke-York,4,5,1
+M6G,Man,58,Very concerned,Very concerned,Very informed,Some university,"More than $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,3,5,0
+M6G,Man,54,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,4,4,0
+M6H,Man,33,Very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,0,0
+M6H,Man,28,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,0,Toronto/East York,4,1,0
+M6H,Woman,37,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,1,0
+M6H,Woman,38,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,2,0
+M6H,Man,41,Not very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,TRUE,TRUE,1,Toronto/East York,4,4,0
+M6H,Woman,51,Extremely concerned,Very concerned,Very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,Toronto/East York,4,2,0
+M6H,Woman,57,Extremely concerned,Extremely concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,2,Toronto/East York,3,1,0
+M6H,Woman,38,Extremely concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,1,Toronto/East York,2,1,0
+M6H,Woman,41,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,0,0
+M6H,Woman,66,Very concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,TRUE,3,Toronto/East York,2,3,0
+M6J,Woman,28,Not very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",FALSE,TRUE,TRUE,0,Toronto/East York,5,5,0
+M6J,Woman,36,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,5,0
+M6J,Woman,51,Not very concerned,Not very concerned,Not very informed,"Completed community college, vocational, trade school","$100,001 to $150,000",FALSE,FALSE,FALSE,2,Toronto/East York,2,4,0
+M6J,Man,27,Not very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,TRUE,TRUE,0,Toronto/East York,4,5,0
+M6J,Woman,71,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,1,0
+M6J,Man,64,Very concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,Toronto/East York,4,4,0
+M6J,Man,41,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,FALSE,1,Toronto/East York,4,5,0
+M6K,Woman,33,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,0,Toronto/East York,5,5,0
+M6K,Man,47,Very concerned,Extremely concerned,Very informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,TRUE,1,Toronto/East York,2,0,0
+M6K,Man,41,Very concerned,Very concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Toronto/East York,3,3,0
+M6L,Woman,19,Extremely concerned,Extremely concerned,Not very informed,"Some community college, vocational, trade school","Under $40,000",TRUE,TRUE,FALSE,0,North York,1,0,2
+M6L,Woman,55,Very concerned,Very concerned,Not very informed,Some university,"More than $150,000",TRUE,TRUE,FALSE,2,North York,3,5,2
+M6L,Man,43,Very concerned,Very concerned,Not very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,North York,0,2,2
+M6L,Man,58,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,North York,5,5,2
+M6M,Woman,69,Very concerned,Very concerned,Very informed,High school or less,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,Etobicoke-York,0,1,1
+M6M,Woman,33,Not very concerned,Not very concerned,Not very informed,High school or less,"Under $40,000",FALSE,FALSE,FALSE,0,Etobicoke-York,0,0,1
+M6M,Man,46,Extremely concerned,Extremely concerned,Not very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,Etobicoke-York,3,2,1
+M6M,Man,70,Extremely concerned,Extremely concerned,Extremely informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,Etobicoke-York,3,1,1
+M6M,Man,55,Extremely concerned,Extremely concerned,Very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,TRUE,2,Etobicoke-York,0,2,1
+M6M,Woman,60,Extremely concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","Under $40,000",TRUE,TRUE,FALSE,2,Etobicoke-York,2,0,1
+M6N,Woman,35,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Etobicoke-York,4,2,1
+M6N,Woman,31,Not at all concerned,Not at all concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",FALSE,FALSE,TRUE,0,Etobicoke-York,4,3,1
+M6N,Man,38,Very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,FALSE,1,Etobicoke-York,2,1,1
+M6N,Man,51,Not very concerned,Not very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",FALSE,FALSE,TRUE,2,Etobicoke-York,2,1,1
+M6N,Man,49,Extremely concerned,Extremely concerned,Extremely informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,1,Etobicoke-York,4,5,1
+M6P,Woman,57,Extremely concerned,Extremely concerned,Not very informed,"Some community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,2,Toronto/East York,1,3,0
+M6P,Man,36,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,4,0
+M6P,Man,53,Not very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",FALSE,TRUE,FALSE,2,Toronto/East York,4,0,0
+M6P,Woman,38,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,5,4,0
+M6R,Man,58,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,Toronto/East York,4,3,0
+M6S,Woman,75,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,0,0
+M6S,Woman,25,Not very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$60,001 to $80,000",FALSE,TRUE,TRUE,0,Toronto/East York,5,2,0
+M6S,Woman,32,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,FALSE,0,Toronto/East York,5,4,0
+M6S,Woman,56,Extremely concerned,Extremely concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,Toronto/East York,3,3,0
+M6S,Man,39,Very concerned,Very concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Toronto/East York,4,4,0
+M6S,Man,42,Very concerned,Very concerned,Very informed,High school or less,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Toronto/East York,0,1,0
+M6S,Woman,67,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,3,Toronto/East York,5,5,0
+M8V,Man,30,Very concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"Under $40,000",TRUE,TRUE,TRUE,0,Etobicoke-York,5,0,1
+M8V,Woman,65,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,3,Etobicoke-York,5,5,1
+M8V,Woman,64,Extremely concerned,Extremely concerned,Extremely informed,High school or less,"Under $40,000",TRUE,TRUE,TRUE,2,Etobicoke-York,0,0,1
+M8V,Man,50,Extremely concerned,Extremely concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,Etobicoke-York,5,3,1
+M8V,Woman,46,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,1,Etobicoke-York,5,4,1
+M8X,Man,70,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,3,Etobicoke-York,4,4,1
+M8X,Woman,30,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,0,Etobicoke-York,4,5,1
+M8X,Woman,61,Extremely concerned,Extremely concerned,Not very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,Etobicoke-York,3,3,1
+M8X,Man,46,Very concerned,Very concerned,Very informed,Some university,"$40,001 to $60,000",TRUE,TRUE,TRUE,1,Etobicoke-York,3,1,1
+M8X,Man,77,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,FALSE,3,Etobicoke-York,4,3,1
+M8Y,Woman,30,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Etobicoke-York,4,3,1
+M8Y,Man,42,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,FALSE,1,Etobicoke-York,4,5,1
+M8Y,Woman,42,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Etobicoke-York,5,2,1
+M8Z,Man,36,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,1,Etobicoke-York,4,2,1
+M9A,Woman,34,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Etobicoke-York,5,3,1
+M9A,Woman,53,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,Etobicoke-York,5,5,1
+M9A,Woman,51,Very concerned,Very concerned,Very informed,Post graduate/professional school,"More than $150,000",TRUE,TRUE,TRUE,2,Etobicoke-York,5,5,1
+M9B,Man,54,Very concerned,Extremely concerned,Very informed,Post graduate/professional school,"$100,001 to $150,000",TRUE,TRUE,TRUE,2,Etobicoke-York,5,4,1
+M9B,Man,55,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"More than $150,000",FALSE,FALSE,TRUE,2,Etobicoke-York,4,5,1
+M9B,Man,40,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,1,Etobicoke-York,4,5,1
+M9C,Man,34,Extremely concerned,Very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Etobicoke-York,4,4,1
+M9C,Man,28,Not very concerned,Not very concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",FALSE,FALSE,TRUE,0,Etobicoke-York,4,4,1
+M9C,Woman,60,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,Etobicoke-York,4,3,1
+M9C,Woman,76,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,TRUE,3,Etobicoke-York,4,1,1
+M9C,Woman,25,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,0,Etobicoke-York,4,2,1
+M9C,Woman,38,Not very concerned,Very concerned,Very informed,Some university,"$80,001 to $100,000",FALSE,TRUE,TRUE,1,Etobicoke-York,3,3,1
+M9C,Woman,65,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,3,Etobicoke-York,4,0,1
+M9L,Woman,32,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,FALSE,0,North York,4,0,2
+M9L,Woman,52,Very concerned,Not very concerned,Extremely informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,FALSE,TRUE,2,North York,4,4,2
+M9L,Man,56,Extremely concerned,Extremely concerned,Very informed,Completed undergraduate degree,"More than $150,000",TRUE,TRUE,TRUE,2,North York,4,5,2
+M9L,Woman,18,Extremely concerned,Extremely concerned,Very informed,Some university,"Under $40,000",TRUE,TRUE,TRUE,0,North York,3,0,2
+M9M,Woman,30,Extremely concerned,Extremely concerned,Extremely informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,North York,5,3,2
+M9N,Man,24,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"Under $40,000",TRUE,TRUE,TRUE,0,Etobicoke-York,4,0,1
+M9P,Woman,36,Very concerned,Very concerned,Not very informed,Completed undergraduate degree,"$40,001 to $60,000",TRUE,TRUE,FALSE,1,Etobicoke-York,4,1,1
+M9R,Man,76,Extremely concerned,Very concerned,Not very informed,High school or less,"$100,001 to $150,000",TRUE,TRUE,FALSE,3,Etobicoke-York,0,4,1
+M9R,Woman,22,Very concerned,Extremely concerned,Very informed,Completed undergraduate degree,"$100,001 to $150,000",TRUE,TRUE,TRUE,0,Etobicoke-York,4,4,1
+M9R,Woman,58,Very concerned,Very concerned,Very informed,Completed undergraduate degree,"$80,001 to $100,000",TRUE,TRUE,TRUE,2,Etobicoke-York,4,3,1
+M9V,Woman,24,Extremely concerned,Extremely concerned,Extremely informed,"Completed community college, vocational, trade school","$100,001 to $150,000",TRUE,TRUE,TRUE,0,Etobicoke-York,2,4,1
+M9V,Woman,21,Extremely concerned,Extremely concerned,Very informed,Some university,"$60,001 to $80,000",TRUE,TRUE,TRUE,0,Etobicoke-York,3,2,1
+M9V,Man,40,Very concerned,Very concerned,Very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,TRUE,1,Etobicoke-York,5,3,1
+M9V,Man,52,Extremely concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,2,Etobicoke-York,4,2,1
+M9V,Woman,36,Very concerned,Very concerned,Very informed,High school or less,"$60,001 to $80,000",TRUE,TRUE,TRUE,1,Etobicoke-York,0,2,1
+M9V,Man,63,Very concerned,Extremely concerned,Not very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,2,Etobicoke-York,2,3,1
+M9V,Woman,26,Very concerned,Extremely concerned,Not very informed,Completed undergraduate degree,"$60,001 to $80,000",TRUE,TRUE,FALSE,0,Etobicoke-York,4,2,1
+M9W,Man,68,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,3,Etobicoke-York,2,1,1
+M9W,Woman,41,Extremely concerned,Extremely concerned,Very informed,"Some community college, vocational, trade school","$60,001 to $80,000",TRUE,TRUE,TRUE,1,Etobicoke-York,1,2,1
+M9W,Woman,27,Very concerned,Very concerned,Not very informed,"Completed community college, vocational, trade school","$80,001 to $100,000",TRUE,TRUE,FALSE,0,Etobicoke-York,2,3,1
+M9W,Woman,18,Very concerned,Extremely concerned,Very informed,Some university,"$80,001 to $100,000",TRUE,TRUE,TRUE,0,Etobicoke-York,3,3,1
+M9W,Man,48,Very concerned,Very concerned,Very informed,"Completed community college, vocational, trade school","$40,001 to $60,000",TRUE,TRUE,TRUE,1,Etobicoke-York,2,1,1
+M9W,Man,64,Very concerned,Not very concerned,Very informed,Post graduate/professional school,"$60,001 to $80,000",TRUE,FALSE,TRUE,2,Etobicoke-York,5,2,1
+M9W,Man,53,Very concerned,Very concerned,Not very informed,Post graduate/professional school,"$80,001 to $100,000",TRUE,TRUE,FALSE,2,Etobicoke-York,5,3,1

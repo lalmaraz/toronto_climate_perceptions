@@ -1,25 +1,24 @@
 ---
-title: "Climate Perceptions in Toronto: [The effect of age on self-reported level of concern]"
+title: "Women and Highly Educated Toronto Residents Most Concerned About Local Impacts of Climate Change"
 author: "Lorena Almaraz De La Garza"
-date: "April 19th, 2021"
-keywords: "X, Y, Z"
+date: "April 26th, 2021"
 output:
   bookdown::pdf_document2: default
-subtitle: "with data from Open Data Toronto"
-toc: FALSE
+  fig_caption: yes
+subtitle: "A study on climate change perceptions with the City of Toronto's Open Data"
+toc: TRUE
 thanks: 'Code and data are available in this GitHub repository: [lalmaraz/toronto_climate_perceptions](https://github.com/lalmaraz/toronto_climate_perceptions).'
 bibliography: references.bib
-abstract: "This report presents a secondary analysis on the City of Toronto's publicly-accessible data on residents' perceptions about climate change. The results indicate there is a [negative/positive] association between respondents' age and self-reported level of concern of climate change, and a [negative/positive] association between respondents' gender and self-reported level of concern of climate change. The analysis consists of logistic regression conducted with the statistical programming language R. Effectively addressing the ongoing threat of climate change demands collaboration and data-informed decision-making. [The results] contribute to our understanding of the issue at a local level, enabling effective action.
+abstract: "This report presents a secondary analysis of the City of Toronto's data on residents' perceptions about climate change. The results indicate that respondents' gender, education, and income, affect their self-reported level of concern, and level of information, about climate change. The analysis consists of logistic regression performed with the statistical programming language R. The results contribute to our understanding of the issue at a local level, enabling effective action to address the ongoing threat of climate change.
  \\par
- \\textbf{Keywords:} climate change, climate perceptions, climate concerns, climate action, age and climate, youth and climate, toronto residents, open data toronto" 
+ \\textbf {Keywords:} climate change, climate perceptions, climate concerns, climate action, age and climate, gender and climate, toronto residents, open data toronto" 
  
 ---
 
-```{r libs, include = FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r libraries, include = FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 # Load libraries
 library(bookdown)
 library(ggmap)
-library(gt)
 library(here)
 library(httr)
 library(janitor)
@@ -27,80 +26,1291 @@ library(kableExtra)
 library(knitr)
 library(opendatatoronto)
 library(readxl)
-library(rio)
 library(tidyverse)
+library(RCurl)
+library(xml2) 
+library(rvest) 
+library(osmdata) 
+library(sf) 
+library(performance)
+library(modelsummary)
+library(patchwork)
+library(extrafont)
+# Libraries below this comment need to be added to references.bib and cited.
+
+# Get font
+font_import()
+loadfonts()
 ```
 
 # Introduction
+Although scientific research on the impacts of climate change has been conducted for decades, the last few years have seen a surge in public participation and activism. In particular, youth climate leaders, with unwavering motivation and forthright campaigns, have guided and inspired thousands around the world [@unicef]. In their demands, they often ask that adults enact intergenerational equity, which states that every generation, present and future, "holds the Earth in common" [@oxford]. They urge older generations to wake up from their profit-driven ignorance and comfort [@villasenor]. But how does age really affect self-reported concern about climate change? To answer this question, the following pages present a secondary analysis of survey data collected by Environics, commissioned by the City of Toronto, on residents' perceptions of climate change. Using the statistical programming language R, this study performs logistic regression to determine whether a correlation exists between two key variables: age and self-reported level of concern about climate change on a local and global scale. Informed by the youth climate movement, the hypothesis is that younger generations are more inclined to self-describe as concerned about climate change on both scales. 
 
-Although scientific research on the impacts of climate change has been conducted for decades, the last few years have seen a surge of public participation and activism. In particular, youth climate leaders, with unwavering motivation and forthright campaigns, have guided and inspired thousands around the world [@unicef]. In their demands they often ask that adults enact intergenerational equity - the principle that states that every generation, present and future, "holds the Earth in common" [@oxford] - and wake up from their profit-driven ignorance and comfort [@villasenor]. But how does age really affect self-reported concern of climate change? To answer this question, the following pages present a secondary analysis on survey data collected by Environics, commissioned by the City of Toronto, on residents' perceptions on climate change. Using the statistical programming language R, this study performs logistic regression to determine whether a correlation exists between two key variables: age and self-reported level of concern about climate change. Informed by the youth climate movement, the hypothesis is that younger generations are more inclined to self-describe as concerned about climate change. 
+Drawing upon the activism that advocates for an intersectional approach to climate action, a multivariate regression analysis is also performed to include gender, education, income, and region. Intersectionality, as defined by Kimberle Crenshaw and described by Nina Lykke, is the idea that discrimination and systemic inequalities overlap – or intersect – across factors like gender, race, and class, and do not exist in isolation [@lykke]. Intersectional environmentalism, therefore, promotes climate action that recognizes how climate change disproportionately affects the already disadvantaged [@madson]. In this case, the hypothesis is that participants at the margins will have a greater likelihood of reporting a greater level of concern about climate change.
 
-Drawing upon the activism that advocates for an intersectional approach to climate action, a similar regression analysis is also performed on the gender variable. Intersectionality, as defined by Kimberle Crenshaw and described by Nina Lykke, is the idea that discrimination and systemic inequalities overlap – or intersect – across factors like gender, race, and class, and do not exist in isolation [@lykke]. Intersectional environmentalism, therefore, promotes climate action that recognizes the ways in which climate change disproportionately affects the already disadvantaged [@madson]. In this case, the hypothesis is that participants that identified as female will have a greater likelihood of reporting a greater level of concern of climate change.
+The results provide valuable insight. The models indicate that when it comes to whether a Toronto resident self-describes as concerned or not concerned about climate change as it affects Toronto and the Greater Toronto Area, gender, education, and income have a statistically significant effect. For reports on concern about climate change as it affects the rest of the world, only gender and education are important. Regarding whether Torontonians claim to be informed about climate change or not, the most important factor is education, unsurprisingly, but also gender. As argued by Jackson and De Coninck, effective climate action, particularly in adaptation and resilience, depends on active participation at a local level [@jackson]. With this in mind, this paper advocates for the use of open data practices by local governments, including municipalities, to promote data-informed decision-making. For civic engagement and grassroots organizing, access to reliable data is vital. It allows organizers to direct outreach efforts and allocate precious resources efficiently. Due to the scale and complexity of the challenges posed by climate change, ensuring the public has access to quality data can prove immensely beneficial. As poignantly illustrated by Kieran Healy, the crowdsourced data and data analyses that continue to uncover the effects of COVID-19 demonstrate the power of collaboration and open data in addressing challenges of unforeseen scales [@healy]. Similarly, climate change - and effective climate action - have a lot to gain from public ingenuity fueled by open data.
 
-The results provide valuable insight. [Results will be here.] As argued by Jackson and De Coninck, effective climate action, particularly in adaptation and resilience, depends on active participation at a local level [@jackson]. With this in mind, this paper advocates for the use of open data practices by local governments, including municipalities, to promote data-informed decision-making. For civic engagement and grassroots organizing, access to reliable data is vital. It allows organizers to direct outreach efforts and to allocate precious resources efficiently. Due to the scale and complexity of the challenges posed by climate change, ensuring the public has access to quality data can prove immensely beneficial. As beautifully illustrated by Kieran Healy, the crowdsourced data and data analyses that continue to uncover the effects of COVID-19 demonstrate the power of collaboration and open data in addressing challenges of unforeseen scales [@healy]. Similarly, climate change - and effective climate action - have a lot to gain from public ingenuity fueled by open data.
+The paper first presents an overview of the original dataset and the variables relevant to this study. It also provides critical commentary on the data collection methods and original survey design. In addition, it compares the surveyed sample to the provincial and national populations. Next, the Methodology section discusses the strengths and weaknesses of the implemented model, as well as the model that was considered as an alternative. It includes details on how the data were re-coded to suit the model and how non-response was addressed. Then, the Results section explains the baseline category for all models and an interpretation of the estimated coefficients from each analysis. Finally, the Discussion section is comprised of four subsections: Findings, Ethics & Implications, and Limitations & Future Work situating the study within a broader context.
 
-The paper is organized as follows. The Data section presents an overview of the original dataset and the variables relevant to this study. It also provides critical commentary on the limitations of the original survey design. Finally, it compares the surveyed sample to the provincial and national population. The Methodology section discusses the strengths and weaknesses of the implemented model, as well as of the models that were considered as alternatives. It includes details on how the data were re-coded to suit the model and how non-response is addressed. The Results section explains the baseline category in the model and the coefficients from each analysis. Finally, the Discussion section is comprised of four subsections: Findings, Ethics & Implications, Limitations, and Future Work, situating the study within a broader context.
+```{r codeimportdata, include = FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+# Import data
+
+# The nice way*:
+# search_packages("climate") %>% 
+#   list_package_resources() %>% 
+#   filter(grepl("v1", name)) %>% 
+#   get_resource()
+
+# * commented out because there ia an issue with the original file extension (listed as .xls but behaves as .xlsx)
+# contacted data owner on 29032021, issue persists as of 17042021 with error:
+#   "filepath: /var/folders/ff/yckwhmhx69jbjdlphv588lv80000gn/T//RtmpAD7G0d/file14a6c14da63d9.xls"
+#   "libxls error: Unable to open file"
+
+# Here's a less elegant but functional workaround:
+climate_perceptions_raw <- getURL("https://raw.githubusercontent.com/lalmaraz/toronto_climate_perceptions/main/inputs/data/csv_city-of-toronto-climate-perceptions-spss-v1.csv")
+climate_perceptions_csv <- read.csv(text = climate_perceptions_raw)
+
+# Save
+write_csv(climate_perceptions_csv, here("outputs/data/climate_data.csv"))
+```
 
 # Data
-- R [@R] & packages
-- Origin: Environics commissioned by the City of Toronto
-- Sample:
-- Variables: level of concern [yes/no], level of information [yes/no], age [four groups from report], neighbourhood [wards], gender [m/f], dwellings, own/rent, income level, education level
-- Survey limitations/biases: non-response bias (unit/item)
-- Is data missing in patterns?
-- Respondents' demographics compared to broader (provincial/national) population
-- Nice graphs and tables that show the data as I found it
+This report, including all necessary data cleaning, analysis and visualization, was produced with the R statistical programming language (R Core Team 2020) in the R Markdown file format. It uses features from several packages. The dataset is accessed through the *opendatatoronto* package [@opendatatoronto]. The *tidyverse* package is used for data cleaning and manipulation [@tidyverse], as well as *janitor* [@janitor]. Tables and graphs are generated with *kableExtra* [@kableExtra], *extrafont* [@extrafont], *modelsummary* [@modelsummary], *patchwork* [@patchwork], and *ggplot2* [@ggplot2]. A map is created with *ggmap* [@ggmap], *osmdata* [@osmdata] and *sf* [@sf]. External data is accessed, imported, and exported with *RCurl* [@RCurl], *readxl* [@readxl], *httr* [@httr], *xml2* [@xml2], and *rvest* [@rvest]. The models are assessed with *performance* [@performance]. To facilitate a reproducible workflow, *here* [@here] is used to reference file locations, and *bookdown* [@bookdown] and *knitr* [@knitr] to format the report.
 
+The dataset is publicly available through the Open Data Portal hosted by the City of Toronto, and as mentioned, it is accessed through the *opendatatoronto* package [@opendatatoronto]. The data was last refreshed on August 15, 2019, and is listed in the catalogue as “Climate Perception Study”, published by the Environment & Energy Division. The data, as the catalogue states, was collected by Environics Research, a private Canadian polling and market research firm based in Toronto. The firm was commissioned by the City of Toronto to conduct an online survey with a representative sample of Toronto residents [@opendataportal]. According to the source, the survey was designed to “capture perceptions about climate change” to “help the City establish goals, priorities and metrics that will measure success in [climate action]” [@opendataportal]. The catalogue includes a report with results from data analysis prepared by Environics under the section "More information". This report, titled "City-Wide Climate Perceptions Study" [@environics] is referenced throughout this paper to compare results.
 
-## Methodology
-- Logistic regression to show correlation
-- This is a good choice because [strengths] 
-- Clear equation
-- Applied to these data specifically, explain notation
-- The things this *does not* tell us [weaknesses]
-- Even accounting for these ^, this is a reasonable approach because [reasons/alternative models' limitations]
-- How non-response is dealt with here
-- X variables re-coded into binaries
+The data is provided in two versions in the Open Data Portal, a raw version (V1) and a secondary version coded for quantitative analysis (V2). For the purposes of this paper, and to code the data to this paper’s specific aims, only V1 data is used.
 
+The survey was conducted in 2018, between October 11 and 18, with a total of 404 adult residents of Toronto answering the online questionnaire [@opendataportal]. The study followed a purposive sampling method, having specific predetermined groups of interest, residents aged 18 years and over, and implementing screening questions at the beginning of the questionnaire. As the source claims, sample quotas were set by region, age, and gender, in keeping with federal 2016 Census data [@opendataportal], presumably following a proportional approach. The study description on the Open Data portal lists that the survey was conducted on a sample of convenience, indicating that the survey respondents were not randomly selected and invited to participate based on systematic methods, but rather based on proximity, availability, or ease. The specific strategies used to recruit participants are not explained. Additionally, the source does not disclose why sampling was limited to adult residents.
 
-## Results
-- Presented with nothing but the best, A Nice Table
-- Baseline category [refactor if needed]
-- Coefficients [exponentiated]
-- Age will be in groups (so +1 age means +1 age GROUP)
-- For same conditions [education/income/dwellings/etc], change of 1 in a variable[age/gender] is X% more/less likely to self-report more/less concern? More/less informed?
-- What else was in the data [refer to findings from EDA script]? Patterns/trends? Any unasked but answered questions?
+The survey collected a wide range of data, including demographic and general information like postal code, gender, age, language of preference, income level, education level, type of residence, and homeownership. In addition, the survey also asked respondents attitudinal and behavioural questions including their level of concern about climate change as it affects Toronto and the Greater Toronto Area, level of concern of climate change as it affects the rest of the world, level of information about climate change, perceived impacts of climate change in the community, awareness of climate action programs nationally and locally, and believes, attitudes, and behaviours towards climate change and climate action. The dataset spans 152 columns which include, in addition to the participants' direct responses, systemic thematic coding for open-ended questions and all possible responses for question loops. A preview of a few columns and rows from the original dataset as provided by the source can be found in Table \@ref(tab:tabdatapreview).
 
-# Discussion
+```{r tabdatapreview, echo = FALSE, message = FALSE, warning = FALSE}
+# Create a table that shows a preview of the original dataset
+climate_perceptions_csv %>% 
+  slice(9:15) %>% 
+  select(5, 8, 10, 11, 12, 13, 14) %>%
+  knitr::kable(caption = "A preview of the Climate Perceptions Study dataset", booktabs = T) %>% 
+  kable_styling(latex_options = c("scale_down"))
+```
 
-## Findings
-- [Finding 1]
-- [Finding 2]
-- [Finding 3]
+From the dataset, this paper focuses on the following: (1) postal code, a nominal variable; (2) age, measured at the ordinal level; (3) gender, nominal; (4) level of concern of the local impact of climate change, (5) level of concern of the global impact of climate change, (6) level of information about climate change, (7) education level, and (8) income level, all ordinal variables. Table \@ref(tab:tabfocusdata) shows a summary of key demographic features subdivided into a binary, "yes" or "no", for each of the three dependent variables: concerned about climate change as it affects Toronto and the Greater Toronto Area (local), concerned about climate change as it affects the rest of the world (global), and informed about climate change. A list of the questions used to collect this information, as included in the original questionnaire [@questionnaire], can be found in [Appendix 1](#appendix1).
 
-## Ethics & Implications
-- Ethics
-- What exactly did the city do with these data?
-[Women4Climate programme, Wild About Bees, Neighbourhood Climate Action Champions... within TransformTO/Live Green Toronto/Env Grants & Incentives]
-- Open data & civic organizing (1240W10P1)
-- Value of local data-informed action for climate change [may or may not self-promote here, prob won't. but maybe?]
+The original report separated responses based on the participants' district of residence. Similarly, using the first three digits of respondents' postal code and corresponding approximate latitude and longitude, a map with the approximate locations of respondents can be found in Figure \@ref(fig:respmap).
 
-## Limitations
-- Observational data & general limitations of any model, THERE IS NO TRUTH!
-- Speaking on causality [and why I can't/won't]
-- Several things potentially at play here not studied or even acknowledged: research on political affiliation and climate perception, etc
-- Berkson's when looking just at Toronto?
-- Quick look at the city's report (how do they draw conclusions from such a limited dataset?)
+```{r codeinterestvariables, echo = FALSE, message = FALSE, warning = FALSE}
+# Select variables of interest
+climate_perceptions <- 
+  climate_perceptions_csv %>%
+  select(QS1, QS2, HIDAGE1, Q1r1, Q1r2, Q2, QD5, QD6) %>%
+  rename(postal_code = QS1, gender = QS2, age = HIDAGE1, concern_local = Q1r1, concern_global = Q1r2, information = Q2, education = QD5, income = QD6)
 
-## Future Work
-- MRP for Ontario-wide perceptions?
+# Create binary options for outcomes: concern_local, concern_global, and information
+concerned_local <- c("Extremely concerned", "Very concerned")
+not_concerned_local <- c("Not very concerned", "Not at all concerned")
 
-```{r echo=FALSE, message=FALSE, warning=TRUE}
+concerned_global <- c("Extremely concerned", "Very concerned")
+not_concerned_global <- c("Not very concerned", "Not at all concerned")
+
+informed <- c("Extremely informed", "Very informed")
+not_informed <- c("Not very informed", "Not at all informed")
+
+# Add column for each binary to dataframe
+climate_perceptions <- climate_perceptions %>%
+  mutate(concerned_local_binary = case_when(
+    concern_local %in% concerned_local ~ TRUE,
+    concern_local %in% not_concerned_local ~ FALSE
+  ))
+
+climate_perceptions <- climate_perceptions %>%
+  mutate(concerned_global_binary = case_when(
+    concern_global %in% concerned_global ~ TRUE,
+    concern_global %in% not_concerned_global ~ FALSE  
+  ))
+
+climate_perceptions <- climate_perceptions %>%
+  mutate(informed_binary = case_when(
+    information %in% informed ~ TRUE,
+    information %in% not_informed ~ FALSE 
+  ))
+
+# Save
+write_csv(climate_perceptions, here("outputs/data/climate_data.csv"))
 
 ```
 
+```{r figmap, fig.cap="\\label{fig:respmap} A map showing the approximate location of survey respondents", echo = FALSE, message = FALSE, warning = FALSE}
+# Get postal code data
+postal_codes <- read_html("https://www.zipcodesonline.com/2020/06/postal-code-of-toronto-in-2020.html")
+
+# Select html container and grab text
+postal_codes <- postal_codes %>%
+  html_nodes("span") %>%
+  html_text()
+
+website_text <- tibble(postal_codes = postal_codes)
+
+# Slice only relevant info
+website_text <- website_text %>% 
+  slice(52:871)
+
+# Make dataframe
+postal_codes_clean <- data.frame(website_text) # Assign website_text to new vector
+postal_codes_clean <- as.character(postal_codes_clean[,1]) # Convert contents of column 1 into character type
+postal_codes_clean <- matrix(postal_codes_clean, ncol = 4, byrow=TRUE) # Create a matrix w 4 columns and fill by row
+postal_codes_clean <- data.frame(postal_codes_clean) # Turn matrix into dataframe
+
+# Remove leading/trailing space
+postal_codes_clean$X4 <-  gsub("^\\s+|\\s+$", "", postal_codes_clean$X4)
+postal_codes_clean$X3 <-  gsub("^\\s+|\\s+$", "", postal_codes_clean$X3) 
+
+# Create regions based on original report
+toronto_east_york <- c("Central Toronto", "Downtown Toronto", "East Toronto", "East York", "West Toronto")
+etobicoke_york <- c("Etobicoke", "Mississauga", "York")
+north_york <- c("North York", "North York,")
+scarborough <- c("Scarborough")
+
+# Create region column
+postal_codes_clean <- postal_codes_clean %>% 
+  mutate(region = case_when(
+    X4 %in% toronto_east_york ~ "Toronto/East York",
+    X4 %in% etobicoke_york ~ "Etobicoke-York",
+    X4 %in% north_york ~ "North York",
+    X4 %in% scarborough ~ "Scarborough"
+  ))
+
+# Clean some more
+postal_codes_clean <- postal_codes_clean %>% 
+  select("X3", "region") %>% 
+  rename(postal_code = "X3") %>% 
+  mutate(postal_code = str_sub(postal_code,0,3)) %>%   # Keep only first postal code if multiple
+  unique()
+
+# Get latitude and longitude data
+# CA_ON_full.txt is an excerpt of CA_full, available as .zip here: https://download.geonames.org/export/zip/
+# CC GeoNames (www.geonames.org)
+coordinates_on <- read.table(here("inputs/data/CA_ON_full.txt"), header = FALSE, sep = "\t") %>% 
+  select(2,3,4,10,11) 
+
+coordinates_to <- coordinates_on %>% 
+  filter(substr(V2,1,1) == "M")%>% 
+  mutate(V2 = str_sub(V2,0,3)) %>%   # Keep only first postal code if multiple
+  unique() %>% 
+  group_by(V2) %>% 
+  summarise(V2 = V2,
+            V10 = ave(V10),
+            V11 = ave(V11)) %>% # Don't need exact location, an average is fine
+  unique() %>% 
+  rename(
+    postal_code = V2,
+    latitude = V10,
+    longitude = V11
+  )
+
+# Join dataframes and add missing postal codes and coordinates manually
+postal_codes_coordinates <- inner_join(postal_codes_clean, coordinates_to, by = "postal_code") %>% 
+  add_row(postal_code = "M2N", region = "North York", latitude = 43.77093629736116, longitude = -79.4132495121774) %>% 
+  add_row(postal_code = "M2R", region = "North York", latitude = 43.77913556475642, longitude = -79.4442928405029) %>% 
+  add_row(postal_code = "M3C", region = "North York", latitude = 43.722655855005605, longitude = -79.34073514475693) %>% 
+  add_row(postal_code = "M3L", region = "North York", latitude = 43.73590254273471, longitude = -79.51381572378213) %>% 
+  add_row(postal_code = "M3N", region = "North York", latitude = 43.756459368146075, longitude = -79.5212712573707)
+
+
+# Now to the study sample data!
+# Expand dataframe with coordinates and region
+climate_perceptions$postal_code = toupper(climate_perceptions$postal_code)
+sample_locations <- left_join(climate_perceptions, postal_codes_coordinates, by = "postal_code")
+
+# Map!
+# Create map-friendly dataframe:
+map_locations_data_dupes <- sample_locations %>% 
+  group_by(postal_code) %>% 
+  summarise(postal_code = postal_code,
+            region = region,
+            latitude = latitude,
+            longitude = longitude,
+            count = as.numeric(table(postal_code)))
+map_locations_data <- map_locations_data_dupes %>% 
+  unique()
+
+map_locations <- get_map(getbb("Toronto"),maptype = "terrain")
+
+ggmap(map_locations)+
+  geom_point(data = map_locations_data,
+             aes(x = longitude, y = latitude, size = count, color = region)) +
+  scale_color_manual(values = c("tan2", "tomato2", "thistle", "violetred3"))+
+  labs(x = " ", y = "  ", size = "Count", color = "Region", title = "Survey Respondents' Locations")+
+  theme_minimal() +
+  theme(aspect.ratio=9/16) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  theme(text=element_text(size=9,  family="Times"))
+
+```
+
+```{r tabfocusdata, echo = FALSE, message = FALSE, warning = FALSE}
+# Create a table that shows the parts of the dataset this paper focuses on:
+# First, a function to create the columns to populate dataframe for table
+make_column <- function(df) {
+  r1 <- summarize(df, mean = format(round(mean(age),2),2))
+  r2 <- filter(df, gender == "Woman") %>% summarize(n())
+  r3 <- filter(df, gender == "Man") %>% summarize(n())
+  r4 <- filter(df, gender == "Transgender") %>% summarize(n())
+  r5 <- filter(df, gender == "Prefer not to say") %>% summarize(n())
+  r6 <- filter(df, education == "High school or less") %>% summarize(n())
+  r7 <- filter(df, education ==  "Some community college, vocational, trade school") %>% summarize(n())
+  r8 <- filter(df, education ==  "Completed community college, vocational, trade school") %>% summarize(n())
+  r9 <- filter(df, education ==  "Some university") %>% summarize(n())
+  r10 <- filter(df, education ==  "Completed undergraduate degree") %>% summarize(n())
+  r11 <- filter(df, education ==  "Post graduate/professional school") %>% summarize(n())
+  r12 <- filter(df, education ==  "Prefer not to answer") %>% summarize(n())
+  r13 <- filter(df, income ==  "Under $40,000") %>% summarize(n())
+  r14 <- filter(df, income ==  "$40,001 to $60,000") %>% summarize(n())
+  r15 <- filter(df, income == "$60,001 to $80,000") %>% summarize(n())
+  r16 <- filter(df, income == "$80,001 to $100,000") %>% summarize(n())
+  r17 <- filter(df, income == "$100,001 to $150,000") %>% summarize(n())
+  r18 <- filter(df, income == "More than $150,000") %>% summarize(n())
+  r19 <- filter(df, income == "Prefer not to answer") %>% summarize(n())
+  
+  c(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19)
+}
+
+# Pass each condition for each dependent variable to make_column
+local_concern_n <- make_column(filter(climate_perceptions, concerned_local_binary == F))
+local_concern_y <- make_column(filter(climate_perceptions, concerned_local_binary == T))
+global_concern_n <- make_column(filter(climate_perceptions, concerned_global_binary == F))
+global_concern_y <- make_column(filter(climate_perceptions, concerned_global_binary == T))
+information_n <- make_column(filter(climate_perceptions, informed_binary == F))
+information_y <- make_column(filter(climate_perceptions, informed_binary == T))
+
+# Create dataframe for table
+focus_data_table <- data.frame(C1 = c(rep("Age", 1), rep("Gender", 4), rep("Education", 7), rep("Income", 7)),
+                               C2 = c(rep("Mean", 1),
+                                      rep("Female", 1), rep("Male", 1), rep("Transgender", 1), rep("Prefer not to say", 1),
+                                      rep("High school or less", 1),
+                                      rep("Some college, vocational, trade school", 1),
+                                      rep("Completed college, vocational, trade school", 1),
+                                      rep("Some university", 1),
+                                      rep("Completed undergraduate degree", 1),
+                                      rep(" Post graduate/professional school", 1),
+                                      rep(" Prefer not to answer", 1),
+                                      rep("Under $40,000", 1), rep("$40,001 to $60,000", 1),
+                                      rep("$60,001 to $80,000", 1),
+                                      rep("$80,001 to $100,000", 1),
+                                      rep("$100,001 to $150,000", 1),
+                                      rep("More than $150,000", 1),
+                                      rep(" Prefer not to answer", 1)),
+                               L0 = c(flatten_chr(local_concern_n)),
+                               L1 = c(flatten_chr(local_concern_y)),
+                               G0 = c(flatten_chr(global_concern_n)),
+                               G1 = c(flatten_chr(global_concern_y)),
+                               I0 = c(flatten_chr(information_n)),
+                               I1 = c(flatten_chr(information_y)))
+
+# Make table!
+
+kable(caption = "Summary of variables of interest by outcome",focus_data_table, booktabs = T,
+      col.names = c("", "", "No", "Yes", "No", "Yes", "No", "Yes")) %>%
+  add_header_above(c(" ", " ", "Concerned: Local" = 2, "Concerned: Global" = 2, "Informed" = 2)) %>%
+  add_header_above(c(" ", " ", "(N = 401*)" = 2, "(N = 401*)" = 2, "(N = 404)" = 2)) %>%
+  column_spec(1, bold=T) %>%
+  collapse_rows(columns = 1:2, latex_hline = "major", valign = "middle")%>% 
+  kable_styling(latex_options = c("scale_down")) %>% 
+  footnote(symbol = c("Three responses [\"Don't know\"] have been removed"))
+
+
+```
+
+It is important to acknowledge the strengths and weaknesses of the original study. The source does not state how many people were approached to answer the survey. Therefore, it is impossible to accurately estimate the impact of unit non-response bias in the original study. However, it is safe the assume that the original study took deliberate measures to ensure the mitigation of item non-response. All 404 observations list values for all columns in the dataset, with the exception of question loops that required specific conditions to be asked. Assuming the dataset is presented in its original form or as close to it as possible, this response rate is commendable, particularly for an online survey that asks about behaviours and attitudes. As Marlar explains, “[f]or most attitudinal questions, respondents have never considered how they feel about a topic until they are asked” [@marlar], suggesting that methodological designs that allocate time for reflection might lead to higher response rates. Non-response bias can be addressed with preventative steps, including providing incentives for participation [@nonresponse], yet the steps taken in the study are unclear. As stated in the original questionnaire instructions, there were “only a few key questions where [a participant’s] answer [was] required” [@questionnaire], indicating that not all responses were mandatory and instead, participants felt compelled to volunteer an answer.
+
+The survey did include options for participants to withhold information if preferred. For the purposes of this paper, “Prefer not to say”, “Prefer not to answer” and “Don’t know” were considered invalid responses. A total of 78 responses were removed, a significant number that accounts for almost 20% of the sample. The majority of these, 74 in total, were removed due to participants’ refusal to report their income level. Because the models in this paper consider income as a predictor variable, it was necessary to remove the responses, sacrificing valuable information from other variables. While the trade-off is not ideal, it provides the model with stability when including the income variable. Ideally, the original study would have accounted for this type of item non-response in the original survey and study design. Non-response in income-related questions is a common issue, as explained by Moore et al. [@income]. They note this is due to several potential contributors, including cognitive demand. As they explain, participants may refuse to provide their income because they might need definitional precision or clarification on whether it should include or exclude taxes, government subsidies or other financial support, income generated from assets, etcetera [@income]. Additionally, respondents might not recall an amount or the amounts that comprise their total income and may find the mental process of retrieval too taxing for a quick survey. Finally, Moore et al. point at the issue of sensitivity - the taboo of speaking about money publicly [@income]. Although not mentioned by Moore et al., growing concerns around data privacy may lead to respondents hesitating on this particular question. Moore et al. recommend several measures in study design to account for this error, including providing a clear definition, specifying a time period, and most importantly, reiterating that confidentiality will be respected throughout the entirety of the study, as well as explaining succinctly but transparently, why exactly this information is necessary [@income]. While the relevant question in the original questionnaire implements all these considerations to some extent, perhaps it would have been beneficial to emphasize for participants the importance of providing an answer. The original study does not indicate how this type of non-response was dealt with when analyzing the data.
+
+Additionally, the source indicates that sample quotas were established following Census 2016 information from Statistics Canada. However, a comparison between the survey sample and the population of Toronto and Ontario shows some discrepancies. Most salient are the over-representation of participants who identified as male in the 35 to 49 age category, the under-representation of female-identifying participants in the same age group, and the under-representation of participants aged 65 and over of both genders. Because of this, insights gathered from the survey should be considered only for pilot programs or as a starting-point for future, more robust research, with a larger sample that appropriately fits the city's demographics. It is worth noting as well that, as compared to Ontario, the population of Toronto decreases as age increases, indicating that measures or programs designed for Torontonians might not necessarily be generalizable to the province. A graph comparing the age group representation by gender in the survey sample, the city of Toronto, and the province of Ontario is found in Figure \@ref(fig:plotdem).
+
+Convenience sampling, while time- and cost-efficient, is not an appropriate method for the motivations of the original study. As the source states, the study results will "help the City establish goals, priorities and metrics” [@opendataportal]. As indicated in Figure \@ref(fig:plotdem), the study sample did not accurately represent the city population. To ensure the study and results have external validity, it is imperative to follow a random selection approach, ensuring all individuals in the population of interest have similar odds of being included in the study. In this case, cluster random sampling would have accounted for the nuance unique to Toronto neighbourhoods and surrounding areas, notably segmented across important demographic features like age, race, cultural background, and wealth.
+
+The observed effects might be exaggerated or attenuated due to selection bias. Individuals that responded to the call to participate and completed the survey might be systematically different from the broader Toronto population. Participants with little interest in climate action, or skeptical or uninformed about climate change, for example, might have decided not to participate or complete the survey. Proper randomization and participation incentives are measures to mitigate this effect.
+
+A final consideration is social-desirability or conformity bias, particularly in contentious topics, as respondents might feel compelled to adapt their responses to fit societal norms rather than report the truth or their honest opinion. Behavioural and attitudinal questions are especially prone to this tendency, and designing the study to collect more than one reference point, perhaps asking more than one version of a similar question to then triangulate data, might be beneficial. 
+
+The kinds of measurement error and biases stated above, in addition to the lack of clarity on how the original study dealt with these in the design, collection, analysis, and reporting, compromise reliability. Because of this, results from both the original study and this secondary analysis should be considered an initial step towards a more comprehensive study, conducted with careful sampling and meticulous research design.
+
+
+```{r figdem, fig.cap="\\label{fig:plotdem} A graph comparing the survey sample to the city and province populations", echo = FALSE, message = FALSE, warning = FALSE}
+# Compare demographics across suvery sample, Toronto, and Ontario:
+# Get Census 2016 data
+census_2016 <- getURL("https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/download-telecharger/current-actuelle.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=35&B1=All&type=0&FILETYPE=CSV")
+
+# Skip not-too-useful header and sub-column name
+# (thanks to https://stackoverflow.com/questions/39110755/skip-specific-rows-using-read-csv-in-r)
+census_2016_headers <- read.csv(text = census_2016, skip = 1, header = F, nrows = 1, as.is = T,  sep = ',')
+census_2016_data <- read.csv(text = census_2016, skip = 3, header = F, sep = ',')
+colnames(census_2016_data) = census_2016_headers
+
+# Clean
+census_2016_data <- census_2016_data %>%
+  rename(topic = 1, characteristics = 2, flag_total_to = 3, total_to = 4, flag_male_to = 5, male_to = 6, flag_female_to = 7, female_to = 8, 
+         flag_total_on = 9, total_on = 10, flag_male_on = 11,  male_on = 12, flag_female_on = 13, female_on = 14) %>% # Rename to unique names
+  select(1, 2, 4, 6, 8, 10, 12, 14)
+
+age_data <- census_2016_data %>% 
+  filter(topic == "Age characteristics") # Focus on age only
+
+# Create age groups
+young <- c("    20 to 24 years", "    25 to 29 years", "    30 to 34 years")
+youngish <- c("    35 to 39 years", "    40 to 44 years", "    45 to 49 years")
+oldish <- c("    50 to 54 years", "    55 to 59 years", "    60 to 64 years")
+old <- c("  65 years and over")
+
+# Make column with age group
+age_data <- age_data %>%
+  mutate(age_group = case_when(
+    characteristics %in% young ~ 0,
+    characteristics %in% youngish ~ 1,
+    characteristics %in% oldish ~ 2,
+    characteristics %in% old ~ 3
+  )) %>% 
+  na.omit() %>% 
+  slice(1:(n()-1)) # Remove irrelevant row
+
+# Make city/province demographics table
+totals_table_data <- age_data %>%
+  select(4, 5, 7, 8, 9) %>%
+  group_by(age_group) %>%
+  summarise(male_to = sum(male_to),
+            female_to = sum(female_to),
+            male_on = sum(male_on),
+            female_on = sum(female_on))
+
+# Add column for age groups as determined in original report
+climate_perceptions <- 
+  climate_perceptions %>%
+  mutate(age_group = case_when(
+    age >= 18 & age <= 34 ~ 0,
+    age >= 35 & age <= 49 ~ 1,
+    age >= 50 & age <= 64 ~ 2,
+    age >= 65 ~ 3
+  ))
+
+# Vectors with male and female counts per age group from survey
+ms <- climate_perceptions %>% 
+  select (gender, age, age_group) %>% 
+  group_by(age_group) %>% 
+  filter(gender == "Man") %>% summarize(male_s = n())
+fs <- climate_perceptions %>% 
+  select (gender, age, age_group) %>% 
+  group_by(age_group) %>% 
+  filter(gender == "Woman") %>% summarize(female_s = n())
+
+# Join
+ms_fs <- inner_join(ms, fs, by = "age_group")
+totals_table_data <- inner_join(ms_fs, totals_table_data, by = "age_group") %>% 
+  mutate(total_s = 0,
+         total_to = 0,
+         total_on = 0)
+
+# New columns and rows for total counts (not separated by gender)
+totals_table_data$total_s=rowSums(cbind(totals_table_data$male_s,totals_table_data$female_s))
+totals_table_data$total_to=rowSums(cbind(totals_table_data$male_to,totals_table_data$female_to))
+totals_table_data$total_on=rowSums(cbind(totals_table_data$male_on,totals_table_data$female_on))
+
+totals_row <- c("All",
+                sum(totals_table_data$male_s), sum(totals_table_data$female_s),
+                sum(totals_table_data$male_to), sum(totals_table_data$female_to),
+                sum(totals_table_data$male_on), sum(totals_table_data$female_on),
+                sum(totals_table_data$total_s), sum(totals_table_data$total_to), sum(totals_table_data$total_on))
+
+totals_table_data <- rbind(totals_table_data,totals_row)
+
+# Reorder columns
+totals_table_data <- totals_table_data %>%  
+  subset(select = c(1, 2, 3, 8, 4, 5, 9, 6, 7, 10))
+
+# TO DO: Make table? Maybe just a graph
+
+# For now a plot!
+# First, demographics from survey:
+# Select relevant columns and rows
+totals_splot_data <- totals_table_data %>% 
+  select(1:3) %>% 
+  slice(1:(n() -1))
+
+# New data frame with data suited to graph
+splot_data <- data.frame(age_group = c(0,0,1,1,2,2,3,3), gender = rep(c("M", "F"),4))
+splot_data$count <- c(totals_splot_data[1, 2], totals_splot_data[1, 3],
+               totals_splot_data[2, 2], totals_splot_data[2, 3],
+               totals_splot_data[3, 2], totals_splot_data[3, 3],
+               totals_splot_data[4, 2], totals_splot_data[4, 3])
+splot_data$percentage <- as.numeric(splot_data$count) / sum(as.numeric(splot_data$count)) * 100
+
+# Second, demographics from city:
+# Select relevant columns and rows
+totals_toplot_data <- totals_table_data %>% 
+  select(1, 5, 6) %>% 
+  slice(1:(n() -1))
+
+# New data frame with data suited to graph
+toplot_data <- data.frame(age_group = c(0,0,1,1,2,2,3,3), gender = rep(c("M", "F"),4))
+toplot_data$count <- c(totals_toplot_data[1, 2], totals_toplot_data[1, 3],
+                       totals_toplot_data[2, 2], totals_toplot_data[2, 3],
+                       totals_toplot_data[3, 2], totals_toplot_data[3, 3],
+                       totals_toplot_data[4, 2], totals_toplot_data[4, 3])
+toplot_data$percentage <- as.numeric(toplot_data$count) / sum(as.numeric(toplot_data$count)) * 100
+
+# Third, demographics from province:
+# Select relevant columns and rows
+totals_onplot_data <- totals_table_data %>% 
+  select(1, 8, 9) %>% 
+  slice(1:(n() -1))
+
+# New data frame with data suited to graph
+onplot_data <- data.frame(age_group = c(0,0,1,1,2,2,3,3), gender = rep(c("M", "F"),4))
+onplot_data$count <- c(totals_onplot_data[1, 2], totals_onplot_data[1, 3],
+                       totals_onplot_data[2, 2], totals_onplot_data[2, 3],
+                       totals_onplot_data[3, 2], totals_onplot_data[3, 3],
+                       totals_onplot_data[4, 2], totals_onplot_data[4, 3])
+onplot_data$percentage <- as.numeric(onplot_data$count) / sum(as.numeric(onplot_data$count)) * 100 # Add percentages
+
+splot_data$scale <- "Survey Sample"
+toplot_data$scale <- "Toronto"
+onplot_data$scale <- "Ontario"
+
+demplot <- rbind(splot_data,toplot_data,onplot_data) %>% 
+  mutate(age_group = case_when(
+    age_group ==  0  ~ "18-34",
+    age_group ==  1  ~ "35-49",
+    age_group ==  2  ~ "50-64",
+    age_group ==  3  ~ "65+"))
+
+demplot <-demplot %>% 
+ transform(demplot,
+          scale=factor(scale,levels=c("Survey Sample","Toronto","Ontario"))) # So they show up in order of increasing scale in the plot
+
+# Plot!
+ggplot(demplot, aes(width = .5, x = age_group, fill = gender,
+           y = ifelse(test = gender == "M", yes = -percentage, no = percentage))) +
+  geom_bar(stat = "identity") +
+  scale_y_continuous(labels = abs, limits = c(-20,20)) +
+  scale_x_discrete(limits = rev) +
+  coord_flip() +
+  facet_wrap(~scale) +
+  theme_minimal() +
+  theme(aspect.ratio=9/16)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  scale_fill_manual(values = c("tan2", "thistle")) +
+  labs(title = "Gender and Age Group Across Populations", y = "Percentage of population", x = "Age group", fill = "Gender" ) +
+  theme(text=element_text(size=9,  family="Times"))
+```
+
+# Methodology
+
+Because this study aims to find whether age has an effect on self-reported concern of climate change or not, a binary outcome, the model it relies upon is logistic regression. The model assumes that:
+
+$$P(Y=1|X_k) = {\frac{exp(\beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3X_3 + \beta_4X_4)}{1 + exp (\beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3X_3 + \beta_4X_4)}}$$
+The model estimates the probability $P$ of the outcome variable $Y$ to be successful given the predictor variable(s) $X$$_k$. In this case, it elucidates the relationship between the dependent variable, level of concern, and the independent variables age, gender, education, income, and region estimating the parameter values for $\beta$ via maximum likelihood.
+
+Binomial logistic regression was selected due to its efficiency and popularity in assessing dichotomous outcomes, providing measures of appropriateness for each predictor as coefficients and indicating the direction of each association, either positive or negative. The model clearly indicates the importance of each predictor as compared to the others. However, the model assumes linear boundaries across variables – an assumption that might not as easily translate into the complexity of empirical evidence. Because of this, it is imperative to carefully consider, and include, the variables that might significantly affect the outcome. In this case, relevant demographic information is deliberately included. Logistic regression is also highly sensitive to anomalies in data. Therefore, 78 instances of invalid responses were omitted, as described in the Data section. Additionally - and not without careful consideration - the gender variable was reduced to a binary. Because a single observation leads to high instability in the model, "transgender" was removed, narrowing the observations used for each model to 325 from the original sample of 404.
+
+Alternatively, an ordinal logistic regression model was considered as data on the level of concern of climate change (local and global) and the level of information about climate change were collected on a Likert scale. However, they were re-coded to binary variables, and a binomial logistic regression was performed, to create groups with counts as comparable as possible. For instance, while only two participants claimed to be “Not at all informed”, 89 self-described as “Not very informed”. Aggregating these two responses into a broader category, “Not informed” (and “Extremely informed” and “Very informed” into “Informed”) provided higher stability. To fit the model, all three ordinal dependent variables of interest were re-coded into binaries by evenly splitting the 4-point Likert scale.
+
+An additional variable "region" was created for the models. The original report included a map of respondents' approximate locations divided into four main regions: Toronto and East York, Etobicoke-York, North York, and Scarborough. Based on the first three digits of the postal codes as listed in the original dataset, the variable "region" was created following this division. Postal code information, as well as longitude and latitude lists, were primarily sourced from GeoNames [@geonames]. [^1] Bar charts of all independent variables arranged by each of the dependent variables can be found in [Appendix 2](#appendix2). They contain all 325 observations as used in each of the models.
+
+[^1]: More information about how regions were created, including information on coordinates and region subdivisions, can be found in the script *map_regions.R*.
+
+As often stated, all models are wrong but some are useful. As noted in the Data section, the original study design and resulting data have some limitations that even a perfectly calibrated model cannot counteract. Particularly, models operating on observational data might lead to a false level of confidence in drawing conclusions or making claims, as it is easy to fail to recognize the myriad decisions required at every step of the study design, data collection, and analysis. Each of these decisions is an opportunity for bias and human error to be introduced in the study, tainting the results. With this in mind, results should be interpreted as very small insights into the data as it fits the model, and not as unquestionable truths about the world from which the data was collected. Although reproducibility and replicability are rare in social sciences research, a practice of transparency, accountability, and openness can ensure, at the very least, that the results be critically interpreted, disputed when invalid, and augmented or confirmed with further research. 
+
+
+
+```{r codemodel, message=FALSE, warning=FALSE, include=FALSE, results = 'hide'}
+# Clean up:
+# Add column for age groups as determined in original report
+climate_perceptions_clean <- 
+  climate_perceptions %>%
+  mutate(age_group = case_when(
+    age >= 18 & age <= 34 ~ 0,
+    age >= 35 & age <= 49 ~ 1,
+    age >= 50 & age <= 64 ~ 2,
+    age >= 65 ~ 3
+  ))
+
+climate_perceptions_clean <-climate_perceptions_clean[order(climate_perceptions_clean$postal_code), ]
+map_locations_data_dupes<-map_locations_data_dupes[order(map_locations_data_dupes$postal_code), ]
+
+# Add column for region as determined in original report
+climate_perceptions_clean <- climate_perceptions_clean %>%
+  mutate(region = if_else(climate_perceptions_clean$postal_code == map_locations_data_dupes$postal_code, map_locations_data_dupes$region, NULL))
+
+# Remove invalid responses
+climate_perceptions_clean <- climate_perceptions_clean %>%
+  filter(gender != "Prefer not to say", gender != "Transgender", concern_local != "Donâ€™t know", concern_global != "Donâ€™t know", education != "Prefer not to answer", income != "Prefer not to answer")
+
+# Convert income, education, and region to numeric variables
+climate_perceptions_clean <- 
+  climate_perceptions_clean %>%
+  mutate(education_group = case_when(
+    education == "High school or less" ~ 0,
+    education == "Some community college, vocational, trade school" ~ 1,
+    education == "Completed community college, vocational, trade school" ~ 2,
+    education == "Some university" ~ 3,
+    education == "Completed undergraduate degree" ~ 4,
+    education == "Post graduate/professional school" ~ 5,
+  ))
+
+climate_perceptions_clean <- 
+  climate_perceptions_clean %>%
+  mutate(income_group = case_when(
+    income == "Under $40,000" ~ 0,
+    income == "$40,001 to $60,000" ~ 1,
+    income == "$60,001 to $80,000" ~ 2,
+    income == "$80,001 to $100,000" ~ 3,
+    income == "$100,001 to $150,000" ~ 4,
+    income == "More than $150,000" ~ 5,
+  ))
+
+climate_perceptions_clean <- 
+  climate_perceptions_clean %>%
+  mutate(region_group = case_when(
+    region == "Toronto/East York" ~ 0,
+    region == "Etobicoke-York" ~ 1,
+    region == "North York" ~ 2,
+    region == "Scarborough" ~ 3,
+  ))
+
+# Save
+write_csv(climate_perceptions_clean, here("outputs/data/climate_data_clean.csv"))
+
+# Models:
+# Local concern
+glm_concern_local <- glm(concerned_local_binary ~ age_group + gender + education_group + income_group + region_group,
+                         data = climate_perceptions_clean, family = "binomial")
+summary(glm_concern_local)
+
+# Global concern
+glm_concern_global <- glm(concerned_global_binary ~ age_group + gender + education_group + income_group + region_group,
+                          data = climate_perceptions_clean, family = "binomial")
+summary(glm_concern_global)
+
+# Informed
+glm_informed <- glm(informed_binary ~ age_group + gender + education_group + income_group + region_group,
+                    data = climate_perceptions_clean, family = "binomial")
+summary(glm_informed)
+
+# Pseudo R^2:
+r2_mcfadden(glm_concern_local)
+r2_mcfadden(glm_concern_global)
+r2_mcfadden(glm_informed)
+
+# takes deviance from intercept-only (no predictor) and subtracts from full model
+# creates index of proportionate increase in the model fit from including predictors
+
+```
+
+# Results
+
+The reference group for all models is male, aged 18-34, with an education level of high school or less, a household income of under $40,000, and living in the Toronto/East York region. Because the model does not discriminate between ordinal or nominal data, as all independent variables were recoded as dummy variables, the results indicate whether a change in one of the conditions affects the outcomes of interest. For age, education, and income, the coefficient estimate indicates the effect of a one-unit increase in these groups - from "some university" to "completed undergraduate degree", for example. For gender and region, however, the estimated coefficients simply indicate the effect between identifying as male or female or living in one region versus another.
+
+The coefficients in Table \@ref(tab:tabmodels), which presents a summary of the three models, are exponentiated and indicate the odds ratio rather than log odds. According to the first model, gender, education, and income have a statistically significant effect on the likelihood of participants self-describing as concerned about climate change as it affects Toronto and the Greater Toronto Area. When it comes to concern about climate change as it affects the rest of the world, only gender and education are important. Similarly, education and gender are statistically significant as it pertains to whether participants self-describe as informed about climate change or not. 
+
+According to the first model, as compared to males, females have 3.37 times higher odds of self-describing as concerned about the local impacts of climate change, keeping other variables constant. An increase in education, based on the pre-established education group categories, leads to 1.30 times higher odds of self-describing as concerned about the local impacts of climate change, keeping other variables constant. An increase in the income group, as per the established categories, is associated with 0.84 times higher odds of self-describing as concerned about the local impacts of climate change, keeping other variables constant. 
+
+The second model indicates that as compared to males, females have 3.43 times higher odds of self-describing as concerned about the global impacts of climate change, keeping other variables constant. An increase in education, following the education groups determined in the study, leads to 1.25 times higher odds of self-describing as concerned about the global impacts of climate change, keeping other variables constant.
+
+Finally, the third model shows that females, as compared to males, have 0.64 times higher odds of self-describing as informed about climate change. An increase in education, based on the established education groups, leads to 1.36 times higher odds of self-describing as informed about climate change, keeping other variables constant.
+
+This paper sought to answer two research questions: (1) how is age related to concern and knowledge of climate change?, and (2) how do intersecting identities (gender, class) affect concern and knowledge of climate change?
+
+The hypotheses for this study were: (1) in keeping with some of the popular rhetoric in the youth climate movement, age is negatively correlated with self-reported concern and knowledge about climate change. And (2), informed by an intersectional environmentalism approach to climate action, systemically oppressed peoples (non-hegemonic gender, low income, and low education) are more likely to be concerned about climate change.
+
+Based on the results from three multivariate logistic regressions, this study fails to reject the null hypothesis that age does not affect the level of concern and information about climate change. Conversely, the study rejects the null hypothesis that gender, income, and education do not affect the level of concern and information about climate change.
+
+```{r tabmodels, echo = FALSE, message = FALSE, warning = FALSE}
+# Table for models
+models <- list("OR" =glm_concern_local, "OR" =glm_concern_global, "OR" =glm_informed)
+
+modelsummary(models, stars = TRUE, coef_omit = "Intercept", title = "Summary table of three multivariate models",
+             coef_rename=c("age_group" = "Age",
+                           "genderWoman" = "Gender",
+                           "education_group" = "Education",
+                           "income_group" = "Income",
+                           "region_group" = "Region"),
+                           exponentiate = TRUE) %>% 
+  add_header_above(c(" " = 1, "Concerned: Local" = 1, "Concerned: Global" = 1, "Informed" = 1), bold = T)
+```
+
+# Discussion
+The results provide a small window into Torontonians' perceptions about climate change. To complete the picture, it is necessary to assess these results within a broader context. The following sections provide further detail on the relevance of the results and are subdivided into Findings, Ethics & Implications, and Limitations & Future Work. The first section focuses on the predictors that proved to be most significant when it comes to concern and information about climate change: gender, education, and income. In Ethics & Implications, a brief overview of the moral principles implicated in both the original study and this secondary analysis are discussed, as well as the consequences and real-world impacts of the insights gleaned from the study. The Limitations & Future Work section, similar to the critique in the Data section, lists further considerations that the main study might have missed, as well as shortcomings from this secondary analysis, providing some suggestions for potential research to expand upon this study.
+
+## Findings
+
+Although age does not have a statistically significant effect on level of concern and information about climate change, it is worth mentioning that according to the three models, there is a very slight increase in the likelihood of self-describing as concerned and informed as age increases. This may help inform the rhetoric of the youth climate movement locally.
+
+Also, while region does not have a statistically significant effect either, it is important to consider what living in one area of Toronto versus another means, and why a finer-grained look at neighbourhoods instead of amalgamated regions might be necessary for future research. Toronto, one of the most multicultural cities in the world, is home to an incredibly diverse population that is not evenly distributed across geography but rather seems to cluster by cultural and ethnic background in localized areas [@clark]. With more than 50% of residents belonging to a visible minority group [@statcan], understanding how each community perceives the threat of climate change, and how informed they are, will be imperative for developing programs and measures.
+
+### Gender
+When it comes to climate change perceptions, gender matters. Figure \@ref(fig:plotgender) shows how reports on concern about climate change differ for men and women in Toronto. Gender has an important effect on whether an individual is concerned or not about climate change as it affects both Toronto and the rest of the world, with female-identifying Torontonians having a higher likelihood of self-describing as concerned. Pearse's review of the literature on gender and climate illustrates how "gender relations are an integral feature of social transformations associated with climate change" [@pearse], warning against gender-blind social research on the topic.
+
+Gender also matters in how informed people are about climate change. In Toronto, female-identifying people are more likely to be informed. As stated by Arora-Jonsson, women across the world are and will continue to experience a higher negative impact from the effects of climate change [@arora]. For women, knowledge about responses to climate change, both mitigation and adaptation, is vital. Arora-Jonsson advocates for a feminist response to climate change that carefully questions gender polarities [@arora].
+
+For establishing goals, priorities and metrics for success - the motivation for the original study - gender has to be considered. Programs that target female-identifying people and address the compounded negative impacts of climate change, including the economic, health-related, and psychological harms, will become increasingly necessary. Additionally, programs designed to increase the understanding of climate issues for men will also be worthwhile. Establishing gender-aware priorities towards not only informing but also protecting and supporting Torontonians is crucial.
+
+```{r figgender, fig.cap="\\label{fig:plotgender} Histograms of Torontonians' gender and concern about climate change.",out.width = '100%', echo = FALSE, message = FALSE, warning = FALSE}
+genderlocal<-ggplot(climate_perceptions_clean, aes(x=gender, fill=concerned_local_binary)) +
+  geom_histogram(stat = "count", position="dodge")+
+  theme(legend.position="bottom")+
+  scale_fill_manual(values = c("violetred3", "thistle"))+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  labs(x = "Gender", y = "Count", fill = "Concerned", title = "As it affects Toronto/GTA")+
+  theme_minimal() +
+  theme(aspect.ratio=9/16) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  theme(text=element_text(size=9,  family="Times"))
+
+genderglobal<-ggplot(climate_perceptions_clean, aes(x=gender, fill=concerned_global_binary)) +
+  geom_histogram(stat = "count", position="dodge")+
+  theme(legend.position="bottom")+
+  scale_fill_manual(values = c("tomato2", "tan"))+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  labs(x = "Gender", y = "Count", fill = "Concerned", title = "As it affects the rest of the world")+
+  theme_minimal() +
+  theme(aspect.ratio=9/16) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  theme(text=element_text(size=9,  family="Times"))
+
+genderlocal+genderglobal+ 
+  plot_annotation(title = "Gender and Concern About Climate Change")& 
+  theme(text=element_text(size=9,  family="Times"))
+
+```
+
+### Education
+Unsurprisingly, an individual's level of education has an effect on how informed they are about climate change. The higher level of education achieved, the greater likelihood to self-describe as informed about climate change. This means that the city should consider educational campaigns and interventions that target residents with lower education levels, providing avenues for them to stay informed. 
+
+Level of education also affects whether a person describes as concerned or not about climate change. Education proved to be particularly important for expressing concern about the local impacts of climate change, but it also influences the level of concern about global impacts. Figure \@ref(fig:ploteduc) shows participants' incomes and whether they describe as concerned about climate change. Education serves as a social equalizer providing residents with the ability to make informed decisions. For climate action, while the City of Toronto's current interventions through TransformTO emphasize individual action, education is imperative for residents to go beyond and to participate in regulation and policy, demanding accountability from government and industry.
+
+```{r figeduc, fig.cap="\\label{fig:ploteduc} Histograms of Torontonians' level of education and concern about climate change.",out.width = '100%', echo = FALSE, message = FALSE, warning = FALSE}
+educlocal<-ggplot(climate_perceptions_clean, aes(x=education_group, fill=concerned_local_binary)) +
+  geom_histogram(stat = "count", position="dodge")+
+  theme(legend.position="bottom")+
+  scale_fill_manual(values = c("violetred3", "thistle"))+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  labs(x = "Education", y = "Count", fill = "Concerned", title = "As it affects Toronto/GTA")+
+  theme_minimal() +
+  theme(aspect.ratio=9/16) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  theme(text=element_text(size=9,  family="Times"))
+
+educglobal<-ggplot(climate_perceptions_clean, aes(x=education_group, fill=concerned_global_binary)) +
+  geom_histogram(stat = "count", position="dodge")+
+  theme(legend.position="bottom")+
+  scale_fill_manual(values = c("tomato2", "tan"))+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  labs(x = "Education", y = "Count", fill = "Concerned", title = "As it affects the rest of the world")+
+  theme_minimal() +
+  theme(aspect.ratio=9/16) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  theme(text=element_text(size=9,  family="Times"))
+
+educlocal+educglobal+ 
+  plot_annotation(title = "Education and Concern About Climate Change")& 
+  theme(text=element_text(size=9,  family="Times"))
+
+
+```
+
+### Income
+Interestingly, level of income has an effect on whether participants self-describe as concerned about climate change as it affects Toronto and the Greater Toronto Area. Wealthier groups are more likely to express concern. Further research is required to understand why this is the case, but it seems like providing relevant information on climate change and its impacts, particularly as they affect those with low incomes, might be beneficial. It is well established that around the world, the poorest people are the most impacted [@un]. This can help inform response on a local level.
+
+## Ethics & Implications
+
+Concerning the original study, and acknowledging that the published questionnaire might have been different from the one implemented, there are key items to consider in relation to ethics. First, the original survey introduction does not explain whether anonymity was ensured nor how. It does not mention confidentiality either, only the final question does, asking about level of income (included in [Appendix 1](#appendix1)). Additionally, it is not clear whether data protection measures were taken nor if participants were informed about the intent to publish their responses as a publicly accessible dataset through the Open Data Portal. However, the questionnaire indicates that name, address, email address, phone number, or other personally identifiable information was not collected. Because the survey did collect quasi-identifiers or linkable information like year of birth, level of education and income, postal code, number of residents in the household, and number of children living in the household, participants should have been informed about the measures taken to protect their privacy, a key feature to informed consent. The purpose of the survey and the reiteration of voluntary participation is not evident in the survey introduction either. Ethics standards are paramount to any study involving human participants, and appropriate disclosure and assurance would have strengthened the study overall.
+
+Based on the limited sample and sampling method, which led to the over- and under-representation of certain groups, and other limitations mentioned in the Data section, the author would advise caution in developing city-wide interventions. Rather, the results should be referenced as a point of departure for future studies, employing robust methods, or for small-scale pilot programs. It is unclear whether the information from the original study has already informed the many climate change-related programs the City of Toronto runs, but improved methods and design would lead to a  more comprehensive understanding and consequently, better-informed initiatives.
+
+The TranformTO strategy stands to gain significantly from expanded research. TransformTO "includes short and long-term actions to meet the City’s greenhouse gas reduction targets of 65 per cent by 2030, and net zero by 2050, or sooner" [@transformTO]. It includes several programs and initiatives, promoting "4 Big Steps" to fight climate change: reducing energy, reducing transportation footprint, minimizing waste, and getting involved in community activities. The original study and survey are included as part of TransformTO [@transformTO].
+
+From the programs that the City currently operates, the results can inform a few in particular. Currently, the Women4Climate Mentorship Programme through Live Green Toronto aims to "contribute to the next generation of climate leaders through a mentorship programme dedicated to women who are working to address the climate crisis" [@women4climate]. As the results from this study show, gender plays an important role in the level of concern and level of information about climate change both locally and globally. Plans to expand the program, as it currently only invites 12 women to participate, should consider results from this and similar studies.
+
+Additionally, the Climate Action Fund "supports community-led projects, activities and events that directly or indirectly reduce the harmful emissions that contribute to climate change" [@climateactionfund]. As the information site explains, funding is available on a geographic or population-level cluster basis [@climateactionfund]. The initiative would benefit from robust studies that take a closer look at the neighbourhood-level intricacies of Torontonian's perceptions of climate change, rather than aggregated regions.
+
+Finally, the Neighbourhood Climate Action Champions program, enabling local leaders to inspire climate action, has eligibility criteria based on age among other factors [@champions]. It prioritizes applications from people of colour, newcomers, LGBTQ2S+ persons, women, Indigenous peoples, and persons with disabilities / disabled [@champions]. A deeper understanding of intersectionality as it relates to climate change, based on evidence, would inform the program criteria and provide further specificity.
+
+## Limitations & Future Work
+
+As noted in the Data section, the original study had some limitations that directly impact the data. A fundamental flaw is the treatment of gender as three categories, which inevitably was reduced to a binary in this paper. The author's conviction is that this binary is artificial not only in data but in society, and in the context of this paper it is merely utilitarian, elucidating whether differences in self-reported gender affect the outcomes of interest. With this, it is absolutely imperative to acknowledge that while the original survey appropriately included "transgender" as an option, only one individual self-identified. Although the questionnaire might have been inclusive of transgender people, not including comprehensive options for gender is problematic. Additionally, collecting a single data point from a population that continues to face discrimination that in many cases stems directly from under-representation is unacceptable. A robust study design, particularly one that takes place in Toronto - arguably home to Canada's largest transgender, gender-fluid, nonbinary, and gender non-conforming population - would deliberately collect their perspectives with a representative sample.
+
+Additionally, the survey flailed to incorporate key factors known to influence an individual's perspectives on climate change, which impact construct validity. Three specific items come to mind: political affiliation, field of knowledge, and race. Work by Berbeco and Hamilton states that political affiliation seems to be a major factor in whether people accept the scientific evidence of climate change [@berbeco]. Understanding how political affiliation may be influencing perspectives in Toronto is fundamental to determine how leaders should communicate to their constituents to encourage climate action towards achieving TransformTO goals.
+
+As the results revealed, level of education has an effect on the level of concern and the level of information about climate change, with highly educated individuals self-describing as more concerned and more informed. However, the study did not inquire about specific fields of study. As seminal research by O'Riordan states, environmental attitudes are dependent on an individual's level of knowledge [@oriordan]. Work by Srichai found that significant differences in perceptions and attitudes towards environmental issues stem from the field of study in secondary education [@srichai]. Given the high percentage of university-educated residents of Toronto, learning about their field of study would better inform climate action programs.
+
+With the ongoing fight against race-based discrimination, it is necessary to understand how visible minorities are affected by climate change to ensure their concerns are directly addressed by proposed interventions. In November 2018, just a few months after the original study was conducted, the City of Toronto published a report on Indigenous Strategic Discussions on City of Toronto Climate Strategies. The report acknowledges the fundamental role Indigenous communities play in the development of a climate just future [@indigenousreport]. The discussants agreed that "a more in-depth consultation process would be necessary to support a more formal set of recommendations or action items (let alone policies) in ways that represented meaningful regional Indigenous consultation on these important matters" [@indigenousreport]. With this in mind, the deliberate inclusion of the race variable in any future studies would help elucidate how the impacts of climate change are distributed across Toronto's peoples. The work of the Indigenous-led Environmental Data Justice Lab looks at the relationships between data, pollution, and colonialism, developing initiatives that are aware of the uneven negative effects of environmental racism [@tru]. Environmental racism, as defined by Chavis and quoted by Beech, describes the "racial discrimination in environmental policy-making, the enforcement of regulations and laws, [the deliberate targeting of communities of colour for toxic waste facilities, the official sanctioning of the life-threatening presence of poisons and pollutants in our communities [...], and the history of excluding people of colour from leadership of the ecology movements" [@beech]. Future research that accounts for this form of systemic oppression is paramount.
+
+As evidenced by their participation in hundreds of strikes and actions around the globe, youth have played an instrumental role in the climate movement, and understandably so. After all, their future depends on effective mitigation and adaptation strategies. The decision to exclude people under 18 for the study is shortsighted at best, irresponsible at worst. While conducting research with minors requires an additional layer of scrutiny and ethical considerations, including ensuring parental consent, this particular topic certainly merits the effort. Neither the report nor the source disclose why youth were excluded. In Toronto, with a younger population compared to the province, understanding youth's perceptions of climate change is absolutely necessary. As research by Onur et al. found,  elementary school students express high levels of concern about the environment [@onur]. The researchers also found that gender has an impact even at such a young age, suggesting that girls were significantly more concerned than boys [@onur]. Future research should ensure their voices are heard, intentionally enacting intergenerational equity.
+
+As briefly acknowledged in the Methodology section, a statistical model operating on observational data cannot make predictions with absolute accuracy. However, careful experimental research design can provide appropriate bases for discussing causality even just with observational data. While the data gathered from the original study is insufficient to do so, modifications to the study design would have allowed for interpretation beyond correlation.
+
+Importantly, a very deliberate assessment of potential confounding should take place. Developing a visual representation of the variable interactions that might be at play, through a directed acyclic graph, can be beneficial. In this case, the study would have benefited from including the variables that are proven to affect perceptions of climate change, as earlier described. Additionally, the sampling method would have had to allow for an accurate representation of the population to accurately estimate a counterfactual. Because the population of interest is residents of Toronto but the sample included a higher proportion of males in the 35 to 49 category, causality statements would be compromised. As mentioned in the Data section, systematic sampling and providing incentives for participation would have helped mitigate selection bias. Measurement bias, as well, limited the possibilities of discussing causality. Although there is no missing data in the dataset, in the sense that all observations contain values for all columns, it is difficult to assess whether participants provided honest answers or whether they were victims of social-desirability bias. A survey that accounted for this, particularly regarding income and attitudinal questions, by providing more than a single opportunity for individuals to share their answers would have been valuable. A thoroughly tested survey, and one that is delivered through the most appropriate means based on expected results rather than convenience, is fundamental for establishing causation. Lastly, there is the risk of Berkson's paradox occurring when looking only at Toronto data. Berkson's paradox refers to a perceived relationship that arises from a narrow look at data and can be addressed by collecting data from a larger population group [@berkson]. While region might seem unimportant when analyzing Toronto data, for example, this might not be the case when analyzing provincial data, as we may find that highly urban regions differ greatly from rural and suburban regions and that this distinction does have an effect on climate perceptions. With a large enough sample, and having data on all relevant variables, propensity score matching would have been possible. Propensity score matching "involves assigning some probability to each observation" [@alexander]. In other words, it uses each individual's propensity to receive a treatment when control and treatment groups have not been randomly assigned, and matches individuals based on similarities. In this case, individuals would have been matched on age, gender, income, and education to try to uncover whether the place where they live, hypothetically, affects their level of concern about climate change. We could then find, for example, that a highly educated male with a high income has a higher propensity to describe as concerned about climate change, compared to someone with the opposite characteristics, illustrating that the region itself might not affect. However, this approach requires including all variables that might be having an effect, and as stated before, the survey did not account for those.
+
+Regardless, the results provide further information on how future studies can be operationalized. More broadly, the results continue to expand our understanding of a challenging issue of an immensely complex nature through the use of open data. Research that embraces open science and open data practices is fundamental to accelerate the pace of problem discovery, empower groups and individuals, and foster collaboration towards actionable solutions [@vasa]. This is especially true for climate change research. Effective action, as Jackson and De Coninck emphasize, depends in part on active participation at a local level [@jackson], led by passionate citizens and not just governments, academic institutions, or charitable organizations. Open data is vital for civic engagement and grassroots organizing, as it allows organizers to make data-informed choices when determining their outreach efforts, resource allocation, program design, and other strategic decisions. The hope is that the results listed in this paper, and the general practice of producing the paper itself, will motivate others to engage in data analysis with the use of open data[^2], free software, and the wealth of information available online. 
+
+[^2]: The author would like to kindly acknowledge Megan MacLean, Project Lead of Outreach & Engagement at the Environment & Energy Division of the City of Toronto and listed data owner for the dataset used in this study, for their support in providing additional resources and promptly addressing any difficulties.
+
 \newpage
 # Appendix 1 {#appendix1}
+Excerpt of relevant questions from original survey [^3]
+
+[^3]: The survey is not publicly accessible but was made available upon request by the City of Toronto's Environment & Energy Division.
+
+
+- **S1.** Please enter the six digits of your home postal code below. This is to ensure that the survey is representative of respondents from across the city. (Enter postal code below)
+
+- **S2.** Your gender: (Select one option only) 
+  - 01 – Woman 
+  - 02 – Man 
+  - 03 – Transgender 
+  - 04 – Prefer not to say 
+  - 05 – Not listed above 
+
+- **S3.** In what year were you born?
+  - 01 – 18-34 (C=1984-2000) 
+  - 02 – 35-49 (C=1969-1983) 
+  - 03 – 50-64 (C=1954-1968) 
+  - 04 – 65+ (C=1953 OR EARLIER) 
+
+- **Q1.** For each of the following, how concerned are you about climate change? (Select one response for each) 
+  - **Q1.1** As it affects Toronto / the GTA
+    - 04 – Extremely concerned
+    - 03 – Very concerned
+    - 02 – Not very concerned
+    - 01 – Not at all concerned
+    - 99 – Don’t know
+  - **Q1.2** As it affects the rest of the world 
+    - 04 – Extremely concerned
+    - 03 – Very concerned
+    - 02 – Not very concerned
+    - 01 – Not at all concerned
+    - 99 – Don’t know
+
+- **Q2**. To what extent do you consider yourself to be informed about what causes climate change? (Select one response only) 
+  - 04 – Extremely informed
+  - 03 – Very informed
+  - 02 – Not very informed
+  - 01 – Not at all informed 
+
+- **D5.** What is the highest level of education that you have completed? (Select one response only) 
+  - 01 – High school or less
+  - 02 – Some community college, vocational, trade school
+  - 03 – Completed community college, vocational, trade school
+  - 04 – Some university
+  - 05 – Completed undergraduate degree
+  - 06 – Post graduate/professional school
+  - 99 – Prefer not to answer 
+
+- **D6.** For statistical purposes only, we need information about your income. All individual responses will be kept confidential. Please indicate which category applies to your total household income before taxes for 2017. (Select one response only) 
+  - 01 – Under \$40,000
+  - 02 – \$40,001 to \$60,000
+  - 03 – \$60,001 to \$80,000
+  - 04 – \$80,001 to \$100,000
+  - 05 – \$100,001 to \$150,000
+  - 06 – More than \$150,000
+  - 99 – Prefer not to answer
+
+\newpage
+# Appendix 2 {#appendix2}
+```{r figresultsi, fig.cap="\\label{fig:plotresultsi} Bar charts of participants' responses about whether or not they are informed about climate change classified by age, gender, education, income and region.",out.width = '100%', echo = FALSE, message = FALSE, warning = FALSE}
+# Informed: Yes
+iyage<-ggplot(climate_perceptions_clean %>% filter(informed_binary==T), aes(age_group)) + 
+  geom_bar(stat="count", fill = "tan2")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "18 to 34", "1" = "35 to 49", "2" = "50 to 64", "3" = "65 +"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(y = "Count", x = " ")
+
+iygender<-ggplot(climate_perceptions_clean %>% filter(informed_binary==T), aes(gender)) + 
+  geom_histogram(stat="count", fill = "tomato2")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Gender")
+
+iyeducation<-ggplot(climate_perceptions_clean %>% filter(informed_binary==T), aes(education_group)) + 
+  geom_histogram(stat="count", fill = "tan")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Education")
+
+
+iyincome<-ggplot(climate_perceptions_clean %>% filter(informed_binary==T), aes(income_group)) + 
+  geom_histogram(stat="count", fill = "violetred3")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Under $40,000", "1" = "$40,001 to $60,000", "2" = "$60,001 to $80,000", "3" = "$80,001 to $100,000", "4" = "$100,001 to $150,000", "5" = "$150,000 +"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Income")
+
+iyregion<-ggplot(climate_perceptions_clean %>% filter(informed_binary==T), aes(region_group)) + 
+  geom_histogram(stat="count", fill = "thistle")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Toronto/East York", "1" = "Etobicoke-York", "2" = "North York", "3" = "Scarborough"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey"))
+
+
+# Informed: No
+inage<-ggplot(climate_perceptions_clean %>% filter(informed_binary==F), aes(age_group)) + 
+  geom_bar(stat="count", fill = "tan2", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "18 to 34", "1" = "35 to 49", "2" = "50 to 64", "3" = "65 +"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(y = "Count", x = " ")
+
+ingender<-ggplot(climate_perceptions_clean %>% filter(informed_binary==F), aes(gender)) + 
+  geom_histogram(stat="count", fill = "tomato2", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Gender")
+
+ineducation<-ggplot(climate_perceptions_clean %>% filter(informed_binary==F), aes(education_group)) + 
+  geom_histogram(stat="count", fill = "tan", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Education")
+
+
+inincome<-ggplot(climate_perceptions_clean %>% filter(informed_binary==F), aes(income_group)) + 
+  geom_histogram(stat="count", fill = "violetred3", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Under $40,000", "1" = "$40,001 to $60,000", "2" = "$60,001 to $80,000", "3" = "$80,001 to $100,000", "4" = "$100,001 to $150,000", "5" = "$150,000 +"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Income")
+
+inregion<-ggplot(climate_perceptions_clean %>% filter(informed_binary==F), aes(region_group)) + 
+  geom_histogram(stat="count", fill = "thistle", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Toronto/East York", "1" = "Etobicoke-York", "2" = "North York", "3" = "Scarborough"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey"))
+
+iyage+ iygender+ iyeducation+ iyincome+ iyregion+ 
+  plot_annotation(tag_levels = list(c('Informed','','','', '', 'Not Informed'), '1'), title = "Torontonians and Information About Climate Change")+
+  inage+ ingender+ ineducation+ inincome+ inregion+ plot_layout(nrow=2)& 
+  theme(text=element_text(size=9,  family="Times"))
+
+```
+```{r figresultscl, fig.cap="\\label{fig:plotresultscl} Bar charts of participants' responses about whether or not they are concerned about climate change as it affects Toronto and the Greater Toronto Area, classified by age, gender, education, income and region.",out.width = '100%', echo = FALSE, message = FALSE, warning = FALSE}
+# Concern Local: Yes
+clyage<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==T), aes(age_group)) + 
+  geom_bar(stat="count", fill = "tan2")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "18 to 34", "1" = "35 to 49", "2" = "50 to 64", "3" = "65 +"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(y = "Count", x = " ")
+
+clygender<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==T), aes(gender)) + 
+  geom_histogram(stat="count", fill = "tomato2")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Gender")
+
+clyeducation<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==T), aes(education_group)) + 
+  geom_histogram(stat="count", fill = "tan")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Education")
+
+
+clyincome<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==T), aes(income_group)) + 
+  geom_histogram(stat="count", fill = "violetred3")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Under $40,000", "1" = "$40,001 to $60,000", "2" = "$60,001 to $80,000", "3" = "$80,001 to $100,000", "4" = "$100,001 to $150,000", "5" = "$150,000 +"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Income")
+
+clyregion<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==T), aes(region_group)) + 
+  geom_histogram(stat="count", fill = "thistle")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Toronto/East York", "1" = "Etobicoke-York", "2" = "North York", "3" = "Scarborough"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey"))
+
+
+# Concern Local: No
+clnage<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==F), aes(age_group)) + 
+  geom_bar(stat="count", fill = "tan2", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "18 to 34", "1" = "35 to 49", "2" = "50 to 64", "3" = "65 +"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(y = "Count", x = " ")
+
+clngender<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==F), aes(gender)) + 
+  geom_histogram(stat="count", fill = "tomato2", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Gender")
+
+clneducation<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==F), aes(education_group)) + 
+  geom_histogram(stat="count", fill = "tan", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Education")
+
+
+clnincome<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==F), aes(income_group)) + 
+  geom_histogram(stat="count", fill = "violetred3", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Under $40,000", "1" = "$40,001 to $60,000", "2" = "$60,001 to $80,000", "3" = "$80,001 to $100,000", "4" = "$100,001 to $150,000", "5" = "$150,000 +"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Income")
+
+clnregion<-ggplot(climate_perceptions_clean %>% filter(concerned_local_binary==F), aes(region_group)) + 
+  geom_histogram(stat="count", fill = "thistle", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Toronto/East York", "1" = "Etobicoke-York", "2" = "North York", "3" = "Scarborough"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey"))
+
+clyage+ clygender+ clyeducation+ clyincome+ clyregion+ 
+  plot_annotation(tag_levels = list(c('Concerned','','','', '', 'Not Concerned'), '1'), title = "Torontonians and Concern About Local Impacts of Climate Change")+
+  clnage+ clngender+ clneducation+ clnincome+ clnregion+ plot_layout(nrow=2)& 
+  theme(text=element_text(size=9,  family="Times"))
+```
+```{r figresultscg, fig.cap="\\label{fig:plotresultscg} Bar charts of participants' responses about whether or not they are concerned about climate change as it affects the rest of the world, classified by age, gender, education, income and region.",out.width = '100%', echo = FALSE, message = FALSE, warning = FALSE}
+# Concern Global: Yes
+cgyage<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==T), aes(age_group)) + 
+  geom_bar(stat="count", fill = "tan2")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "18 to 34", "1" = "35 to 49", "2" = "50 to 64", "3" = "65 +"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(y = "Count", x = " ")
+
+cgygender<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==T), aes(gender)) + 
+  geom_histogram(stat="count", fill = "tomato2")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Gender")
+
+cgyeducation<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==T), aes(education_group)) + 
+  geom_histogram(stat="count", fill = "tan")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Education")
+
+
+cgyincome<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==T), aes(income_group)) + 
+  geom_histogram(stat="count", fill = "violetred3")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Under $40,000", "1" = "$40,001 to $60,000", "2" = "$60,001 to $80,000", "3" = "$80,001 to $100,000", "4" = "$100,001 to $150,000", "5" = "$150,000 +"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Income")
+
+cgyregion<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==T), aes(region_group)) + 
+  geom_histogram(stat="count", fill = "thistle")+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Toronto/East York", "1" = "Etobicoke-York", "2" = "North York", "3" = "Scarborough"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.line = element_line(colour = "grey"))
+
+
+# Concern Global: No
+cgnage<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==F), aes(age_group)) + 
+  geom_bar(stat="count", fill = "tan2", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "18 to 34", "1" = "35 to 49", "2" = "50 to 64", "3" = "65 +"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(y = "Count", x = " ")
+
+cgngender<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==F), aes(gender)) + 
+  geom_histogram(stat="count", fill = "tomato2", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Gender")
+
+cgneducation<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==F), aes(education_group)) + 
+  geom_histogram(stat="count", fill = "tan", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "High school or less", "1" = "Some community college", "2" = "Completed community college", "3" = "Some university", "4" = "Completed undergraduate", "5" = "Post graduate/professional school"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Education")
+
+cgnincome<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==F), aes(income_group)) + 
+  geom_histogram(stat="count", fill = "violetred3", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Under $40,000", "1" = "$40,001 to $60,000", "2" = "$60,001 to $80,000", "3" = "$80,001 to $100,000", "4" = "$100,001 to $150,000", "5" = "$150,000 +"),
+                     breaks = c(0, 1, 2, 3, 4, 5))+
+  theme(aspect.ratio=4/6)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey")) +
+  labs(x = "Income")
+
+cgnregion<-ggplot(climate_perceptions_clean %>% filter(concerned_global_binary==F), aes(region_group)) + 
+  geom_histogram(stat="count", fill = "thistle", alpha = 0.5)+
+  scale_y_continuous(labels = abs, limits = c(0,150))+
+  scale_x_continuous(labels = c("0" = "Toronto/East York", "1" = "Etobicoke-York", "2" = "North York", "3" = "Scarborough"),
+                     breaks = c(0, 1, 2, 3))+
+  theme(aspect.ratio=4/4)+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank())+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        axis.line = element_line(colour = "grey"))
+
+cgyage+ cgygender+ cgyeducation+ cgyincome+ cgyregion+ 
+  plot_annotation(tag_levels = list(c('Concerned','','','', '', 'Not Concerned'), '1'), title = "Torontonians and Concern About Global Impacts of Climate Change")+
+  cgnage+ cgngender+ cgneducation+ cgnincome+ cgnregion+ plot_layout(nrow=2)& 
+  theme(text=element_text(size=9,  family="Times"))
+
+```
 
 \newpage
 # References

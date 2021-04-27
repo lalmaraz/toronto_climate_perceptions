@@ -11,6 +11,8 @@ library(opendatatoronto)
 library(RCurl)
 library(here)
 library(tidyverse)
+library(performance)
+
 
 # Based on Michael Chong's excellent work, as published in Telling Stories With Data (Alexander, 2021) here:
 # https://www.tellingstorieswithdata.com/exploratory-data-analysis.html#case-study---opinions-about-a-casino-in-toronto
@@ -170,3 +172,15 @@ summary(boomer_concern_global_glm)
 # Informed
 boomer_informed_glm <- glm(informed_binary ~ boomer_status + gender + education_group + income_group, data = climate_perceptions_clean, family = "binomial")
 summary(boomer_informed_glm)
+
+
+# Assess model fit
+r2_mcfadden(boomer_informed_glm)
+# takes deviance from intercept-only (no predictor) and subtracts from full model
+# creates index of proportionate increase in the model fit from including predictors
+
+r2_coxsnell(m_concern_global_glm)
+
+r2_nagelkerke(m_concern_global_glm)
+
+r2_tjur(m_concern_global_glm)

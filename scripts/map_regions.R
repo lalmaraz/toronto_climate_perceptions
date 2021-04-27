@@ -12,7 +12,10 @@ library(here)
 library(rvest)
 library(RCurl)
 library(tidyverse)
-library(xml2)
+library(xml2) 
+library(ggmap)
+library(osmdata)
+library(sf)
 
 # Get data
 postal_codes <- read_html("https://www.zipcodesonline.com/2020/06/postal-code-of-toronto-in-2020.html")
@@ -26,8 +29,6 @@ postal_codes <- postal_codes %>%
   html_text()
 
 website_text <- tibble(postal_codes = postal_codes)
-
-head(postal_codes)
 
 # Slice only relevant info
 website_text <- website_text %>% 
@@ -65,9 +66,6 @@ postal_codes_clean <- postal_codes_clean %>%
   mutate(postal_code = str_sub(postal_code,0,3)) %>%   # Keep only first postal code if multiple
   unique()
 
-# Reminder: Run EDA script first, it generates the file read here:
-climate_perceptions_clean <- read.csv("outputs/data/climate_data_clean.csv")
-
 # Get latitude and longitude data
 # CA_ON_full.txt is an excerpt of CA_full, available as .zip here: https://download.geonames.org/export/zip/
 # CC GeoNames (www.geonames.org)
@@ -81,7 +79,7 @@ coordinates_to <- coordinates_on %>%
   group_by(V2) %>% 
   summarise(V2 = V2,
             V10 = ave(V10),
-            V11 = ave(V11)) %>% 
+            V11 = ave(V11)) %>% # Don't need exact location, an average is fine
   unique() %>% 
   rename(
     postal_code = V2,
@@ -89,9 +87,47 @@ coordinates_to <- coordinates_on %>%
     longitude = V11
   )
 
-# TO DO: Check postal codes in climate_perceptions_clean against postal_codes_clean,
-# make column in 1st that assigns the appropriate region
+# Join dataframes and add missing postal codes and coordinates manually
+postal_codes_coordinates <- inner_join(postal_codes_clean, coordinates_to, by = "postal_code") %>% 
+  add_row(postal_code = "M2N", region = "North York", latitude = 43.77093629736116, longitude = -79.4132495121774) %>% 
+  add_row(postal_code = "M2R", region = "North York", latitude = 43.77913556475642, longitude = -79.4442928405029) %>% 
+  add_row(postal_code = "M3C", region = "North York", latitude = 43.722655855005605, longitude = -79.34073514475693) %>% 
+  add_row(postal_code = "M3L", region = "North York", latitude = 43.73590254273471, longitude = -79.51381572378213) %>% 
+  add_row(postal_code = "M3N", region = "North York", latitude = 43.756459368146075, longitude = -79.5212712573707)
 
 
+postal_codes_clean <- postal_codes_clean %>% 
+  mutate(region = case_when(
+    X4 %in% toronto_east_york ~ "Toronto/East York",
+    X4 %in% etobicoke_york ~ "Etobicoke-York",
+    X4 %in% north_york ~ "North York",
+    X4 %in% scarborough ~ "Scarborough"
+  ))
 
+
+# Now to the study sample data!
+# Reminder: Run EDA script first, it generates the file read here:
+climate_perceptions <- read.csv("outputs/data/climate_data.csv")
+
+# Expand dataframe with coordinates and region
+climate_perceptions$postal_code = toupper(climate_perceptions$postal_code)
+sample_locations <- left_join(climate_perceptions, postal_codes_coordinates, by = "postal_code")
+
+# Map!
+# Create map-friendly dataframe:
+map_locations_data <- sample_locations %>% 
+  group_by(postal_code) %>% 
+  summarise(postal_code = postal_code,
+            region = region,
+            latitude = latitude,
+            longitude = longitude,
+            count = as.numeric(table(postal_code))) %>% 
+  unique()
+
+map_locations <- get_map(getbb("Toronto"),maptype = "terrain")
+ggmap(map_locations)+
+  geom_point(data = map_locations_data,
+             aes(x = longitude, y = latitude, size = count, color = region)) +
+  labs(x = " ", y = "  ", fill = "Region",
+       title = "Survey Respondents' Locations", subtitle = "Climate Perceptions Survey 2018")
 
