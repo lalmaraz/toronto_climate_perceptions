@@ -1,5 +1,5 @@
 ---
-title: "Women and Highly Educated Toronto Residents Most Concerned About Local Impacts of Climate Change"
+title: "Women and Highly Educated Toronto Residents Most Likely to Be Concerned About Local Impacts of Climate Change"
 author: "Lorena Almaraz De La Garza"
 date: "April 26th, 2021"
 output:
