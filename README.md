@@ -2,7 +2,7 @@
 
 This repo contains an R project file for "Women and Highly Educated Toronto Residents Most Likely to Be Concerned About Local Impacts of Climate Change".
 
-It contains three folders: inputs, outputs, and scripts.
+It contains four folders: inputs, outputs, scripts, and shiny.
 Inputs:
 - Source data from the City of Toronto's Open Data Portal
 - Reference literature
@@ -14,6 +14,9 @@ Scripts:
 - EDA
 - map_regions
 - compare_demographics
+
+Shiny:
+- Code for an interactive map, which lives here: https://lorena-almaraz.shinyapps.io/climatestudy/
 
 ## How to generate the paper
 1. Open `toronto_climate_perceptions.Rproj` in RStudio
