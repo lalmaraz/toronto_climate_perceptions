@@ -8,7 +8,7 @@ Inputs:
 - Reference literature
 
 Outputs:
-- The paper folder contains the R Markdown file to generate the paper, a pdf version of the paper, and a complete bibliography.
+- The paper folder contains the R Markdown file to generate the paper, a pdf version of the paper, and a complete bibliography. To access the paper PDF, go here: https://github.com/lalmaraz/toronto_climate_perceptions/blob/main/outputs/paper/paper.pdf
 
 Scripts:
 - EDA
